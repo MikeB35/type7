@@ -38,13 +38,13 @@
 >   1. Create a Schema(database)
 >   2. Import SQL files (server -> Import Data -> Import from Self-Contained File) or create a **New Table**
 >   3. Create a new user:
->   ```bash
+    ```sql
         CREATE USER 'sqluser'@'%' IDENTIFIED WITH mysql_native_password BY 'password' ;
         GRANT ALL PRIVILEGES ON *.* TO 'sqluser'@'%' ;
         FLUSH PRIVILEGES;
     ```
 >   Now your login: sqluser password: password
->   4. In Visual Code download **Database Client** extension
+>   4. In Visual Code download <p style="color: #f20d3e">**Database Client**</p> extension
 >   5. Create a new connection: server: *127.0.0.1* login: *sqluser* password: *password*
 >   6. Click *+Connect* to check the connection, than *Save*
 
