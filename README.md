@@ -44,9 +44,10 @@
         GRANT ALL PRIVILEGES ON *.* TO 'sqluser'@'%' ;
         FLUSH PRIVILEGES;
     ```
-    
+
 >   Now your login: sqluser password: password
->   4. In Visual Code download **Database Client** extension
+>
+>   4. In Visual Code download <mark>**Database Client**</mark> extension
 >   5. Create a new connection: server: *127.0.0.1* login: *sqluser* password: *password*
 >   6. Click *+Connect* to check the connection, than *Save*
 
