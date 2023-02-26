@@ -38,8 +38,7 @@
 >   1. Create a Schema(database)
 >   2. Import SQL files (server -> Import Data -> Import from Self-Contained File) or create a **New Table**
 >   3. Create a new user:
->       ```sql
-            CREATE USER 'sqluser'@'%' IDENTIFIED WITH mysql_native_password BY 'password' ;
+>       ```bash CREATE USER 'sqluser'@'%' IDENTIFIED WITH mysql_native_password BY 'password' ;
             GRANT ALL PRIVILEGES ON *.* TO 'sqluser'@'%' ;
             FLUSH PRIVILEGES;
         ```
