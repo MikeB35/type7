@@ -1,0 +1,418 @@
+/*
+************************************
+          MIKSINES, VARIABLES
+************************************
+ */
+@media (max-width: 576px) {
+  body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    color: #3b3d4a;
+    background: #f1f0f6;
+    font-family: "Maven Pro", sans-serif;
+  }
+  body::-webkit-scrollbar {
+    width: 7px;
+    background: none;
+  }
+  body::-webkit-scrollbar-thumb {
+    width: 7px;
+    background: #f03c56;
+  }
+  body ::-moz-selection {
+    color: #f1f0f6;
+    background: #eb5757;
+  }
+  body ::selection {
+    color: #f1f0f6;
+    background: #eb5757;
+  }
+  body.active {
+    position: fixed;
+    width: 100vw;
+  }
+  body .container-fluid {
+    position: relative;
+    top: -32px;
+  }
+  body .container-fluid .image {
+    background: url("../source/img/project/background.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 1018px;
+  }
+  body .container-fluid .image .row .product {
+    margin-top: 80px;
+  }
+  body .container-fluid .image .row .product .img {
+    border: #f1f0f6 15px solid;
+  }
+  body .container-fluid .image .row .product .img img {
+    width: 250px;
+  }
+  body .container-fluid .image .row .product .share {
+    margin: 12px 12px;
+  }
+  body .container-fluid .image .row .product .share .shareOptions {
+    display: none;
+  }
+  body .container-fluid .image .row .product .share .shareOptions.active {
+    display: block;
+  }
+  body .container-fluid .contents {
+    margin-top: -550px;
+  }
+  body .container-fluid .contents h1 {
+    font-size: 72px;
+    font-weight: 900;
+  }
+  body .container-fluid .contents .options {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    list-style: none;
+    margin-left: -40px;
+  }
+  body .container-fluid .contents .options li {
+    font-weight: 800;
+    padding-right: 35px;
+    color: #85889a;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  body .container-fluid .contents .options li.active {
+    -webkit-text-decoration: #eb5757 underline 2px;
+            text-decoration: #eb5757 underline 2px;
+  }
+  body .container-fluid .contents .description td {
+    font-weight: 800;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 18px;
+    width: 90%;
+  }
+  body .container-fluid .contents .detiles td {
+    font-weight: 800;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 18px;
+  }
+  body .container-fluid .contents .detiles td p {
+    color: #eb5757;
+  }
+  body .container-fluid .contents .detiles td.part2 {
+    color: #eb5757;
+  }
+  body footer {
+    width: 104vw;
+  }
+}
+@media (max-width: 992px) and (min-width: 580px) {
+  body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    color: #3b3d4a;
+    background: #f1f0f6;
+    font-family: "Maven Pro", sans-serif;
+  }
+  body::-webkit-scrollbar {
+    width: 7px;
+    background: none;
+  }
+  body::-webkit-scrollbar-thumb {
+    width: 7px;
+    background: #f03c56;
+  }
+  body ::-moz-selection {
+    color: #f1f0f6;
+    background: #eb5757;
+  }
+  body ::selection {
+    color: #f1f0f6;
+    background: #eb5757;
+  }
+  body.active {
+    position: fixed;
+    width: 100vw;
+  }
+  body .container-fluid {
+    position: relative;
+    top: -41px;
+  }
+  body .container-fluid .image {
+    background: url("../source/img/project/background.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 1018px;
+  }
+  body .container-fluid .image .row .product {
+    margin-top: 80px;
+  }
+  body .container-fluid .image .row .product .img {
+    border: #f1f0f6 15px solid;
+  }
+  body .container-fluid .image .row .product .img img {
+    width: 150px;
+  }
+  body .container-fluid .image .row .product .share {
+    margin: 12px 12px;
+  }
+  body .container-fluid .image .row .product .share img {
+    width: 40px;
+    height: 40px;
+  }
+  body .container-fluid .image .row .product .share .shareOptions {
+    display: none;
+  }
+  body .container-fluid .image .row .product .share .shareOptions.active {
+    display: block;
+  }
+  body .container-fluid .contents h1 {
+    font-size: 72px;
+    font-weight: 900;
+  }
+  body .container-fluid .contents .options {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    list-style: none;
+    margin-left: -40px;
+  }
+  body .container-fluid .contents .options li {
+    font-weight: 800;
+    padding-right: 35px;
+    color: #85889a;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  body .container-fluid .contents .options li.active {
+    -webkit-text-decoration: #eb5757 underline 2px;
+            text-decoration: #eb5757 underline 2px;
+  }
+  body .container-fluid .contents .description td {
+    font-weight: 800;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 18px;
+    width: 90%;
+  }
+  body .container-fluid .contents .detiles td {
+    font-weight: 800;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 18px;
+  }
+  body .container-fluid .contents .detiles td p {
+    color: #eb5757;
+  }
+  body .container-fluid .contents .detiles td.part2 {
+    color: #eb5757;
+  }
+}
+@media (min-width: 992px) and (max-width: 1400px) {
+  body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    color: #3b3d4a;
+    background: #f1f0f6;
+    font-family: "Maven Pro", sans-serif;
+  }
+  body::-webkit-scrollbar {
+    width: 7px;
+    background: none;
+  }
+  body::-webkit-scrollbar-thumb {
+    width: 7px;
+    background: #f03c56;
+  }
+  body ::-moz-selection {
+    color: #f1f0f6;
+    background: #eb5757;
+  }
+  body ::selection {
+    color: #f1f0f6;
+    background: #eb5757;
+  }
+  body.active {
+    position: fixed;
+    width: 100vw;
+  }
+  body .container-fluid {
+    position: relative;
+    top: -32px;
+  }
+  body .container-fluid .image {
+    background: url("../source/img/project/background.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 1018px;
+  }
+  body .container-fluid .image .row .product {
+    margin-top: 80px;
+  }
+  body .container-fluid .image .row .product .img {
+    border: #f1f0f6 15px solid;
+  }
+  body .container-fluid .image .row .product .img img {
+    width: 300px;
+  }
+  body .container-fluid .image .row .product .share {
+    margin: 12px 12px;
+  }
+  body .container-fluid .image .row .product .share .shareOptions {
+    display: none;
+  }
+  body .container-fluid .image .row .product .share .shareOptions.active {
+    display: block;
+  }
+  body .container-fluid .contents h1 {
+    font-size: 72px;
+    font-weight: 900;
+  }
+  body .container-fluid .contents .options {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    list-style: none;
+    margin-left: -40px;
+  }
+  body .container-fluid .contents .options li {
+    font-weight: 800;
+    padding-right: 35px;
+    color: #85889a;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  body .container-fluid .contents .options li.active {
+    -webkit-text-decoration: #eb5757 underline 2px;
+            text-decoration: #eb5757 underline 2px;
+  }
+  body .container-fluid .contents .description td {
+    font-weight: 800;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 18px;
+    width: 90%;
+  }
+  body .container-fluid .contents .detiles td {
+    font-weight: 800;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 18px;
+  }
+  body .container-fluid .contents .detiles td p {
+    color: #eb5757;
+  }
+  body .container-fluid .contents .detiles td.part2 {
+    color: #eb5757;
+  }
+}
+@media (min-width: 1400px) {
+  body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    color: #3b3d4a;
+    background: #f1f0f6;
+    font-family: "Maven Pro", sans-serif;
+  }
+  body::-webkit-scrollbar {
+    width: 7px;
+    background: none;
+  }
+  body::-webkit-scrollbar-thumb {
+    width: 7px;
+    background: #f03c56;
+  }
+  body ::-moz-selection {
+    color: #f1f0f6;
+    background: #eb5757;
+  }
+  body ::selection {
+    color: #f1f0f6;
+    background: #eb5757;
+  }
+  body.active {
+    position: fixed;
+    width: 100vw;
+  }
+  body .container-fluid {
+    position: relative;
+    top: -38px;
+  }
+  body .container-fluid .image {
+    background: url("../source/img/project/background.png");
+    background-repeat: no-repeat;
+    height: 1018px;
+  }
+  body .container-fluid .image .row .product {
+    margin-top: 80px;
+  }
+  body .container-fluid .image .row .product .img {
+    border: #f1f0f6 15px solid;
+  }
+  body .container-fluid .image .row .product .img img {
+    width: 400px;
+  }
+  body .container-fluid .image .row .product .share {
+    margin: 12px 12px;
+  }
+  body .container-fluid .image .row .product .share .shareOptions {
+    display: none;
+  }
+  body .container-fluid .image .row .product .share .shareOptions.active {
+    display: block;
+  }
+  body .container-fluid .contents h1 {
+    font-size: 72px;
+    font-weight: 900;
+  }
+  body .container-fluid .contents .options {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    list-style: none;
+    margin-left: -40px;
+  }
+  body .container-fluid .contents .options li {
+    font-weight: 800;
+    padding-right: 35px;
+    color: #85889a;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  body .container-fluid .contents .options li.active {
+    -webkit-text-decoration: #eb5757 underline 2px;
+            text-decoration: #eb5757 underline 2px;
+  }
+  body .container-fluid .contents .description td {
+    font-weight: 800;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 18px;
+    width: 90%;
+  }
+  body .container-fluid .contents .detiles td {
+    font-weight: 800;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 18px;
+  }
+  body .container-fluid .contents .detiles td p {
+    color: #eb5757;
+  }
+  body .container-fluid .contents .detiles td.part2 {
+    color: #eb5757;
+  }
+}

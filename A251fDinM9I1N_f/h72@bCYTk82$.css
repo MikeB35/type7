@@ -1,0 +1,2432 @@
+/*
+************************************
+          MIKSINES, VARIABLES
+************************************
+ */
+@media (max-width: 576px) {
+  body {
+    margin: 0;
+    padding: 0;
+    overflow-x: scroll;
+    color: #3b3d4a;
+    background: #f1f0f6;
+    font-family: "Maven Pro", sans-serif;
+  }
+  body::-webkit-scrollbar {
+    width: 7px;
+    background: none;
+  }
+  body::-webkit-scrollbar:horizontal {
+    height: 7px;
+    background: none;
+  }
+  body::-webkit-scrollbar-thumb {
+    width: 7px;
+    background: #f03c56;
+  }
+  body ::-moz-selection {
+    color: #f1f0f6;
+    background: #eb5757;
+  }
+  body ::selection {
+    color: #f1f0f6;
+    background: #eb5757;
+  }
+  body.active {
+    position: fixed;
+    width: 100vw;
+  }
+  body .container-fluid header .text {
+    margin-left: 3vw;
+    max-width: 300px;
+  }
+  body .container-fluid header .text div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  body .container-fluid header .text div h1 {
+    font-size: 56px;
+    font-weight: 900;
+    color: #3b3d4a;
+  }
+  body .container-fluid header .text div h1.highlight {
+    color: #eb5757;
+  }
+  body .container-fluid header .statistic h1 {
+    font-size: 20px;
+    color: #eb5757;
+    font-weight: 800;
+  }
+  body .container-fluid header .statistic div h3 {
+    font-weight: 800;
+    font-size: 12px;
+    padding: 0 15px;
+  }
+  body .container-fluid header .stats {
+    height: 40vh;
+  }
+  body .container-fluid .projects {
+    position: relative;
+    overflow-x: scroll;
+  }
+  body .container-fluid .projects .table tr td img {
+    width: 100%;
+  }
+  body .container-fluid .createProjectForm {
+    position: relative;
+    border-bottom: 3px solid #85889a;
+    height: 110vh;
+    margin-top: 7vh;
+  }
+  body .container-fluid .createProjectForm h1 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #eb5757;
+    margin-left: 5vw;
+  }
+  body .container-fluid .createProjectForm .createProject {
+    height: 100%;
+  }
+  body .container-fluid .createProjectForm .createProject .form {
+    width: 100%;
+    height: 90%;
+  }
+  body .container-fluid .createProjectForm .createProject .form form {
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  body .container-fluid .createProjectForm .createProject .form form .form-group {
+    padding: 12px 12px;
+    width: 50%;
+  }
+  body .container-fluid .createProjectForm .createProject .form form .form-group small {
+    font-weight: 800;
+  }
+  body .container-fluid .createProjectForm .createProject .form form .form-group input {
+    font-weight: 800;
+    color: #3b3d4a;
+    background: none;
+    border-radius: 0;
+    border-top: none;
+    border-bottom: none;
+    border-right: 2px solid #85889a;
+    border-left: 2px solid #85889a;
+  }
+  body .container-fluid .createProjectForm .createProject .form form .form-group textarea {
+    font-weight: 800;
+    color: #3b3d4a;
+    background: none;
+    border-radius: 0;
+    border-top: none;
+    border-bottom: none;
+    border-right: 2px solid #85889a;
+    border-left: 2px solid #85889a;
+  }
+  body .container-fluid .createProjectForm .createProject .form form .form-group.left {
+    margin-left: -3vw;
+  }
+  body .container-fluid .createProjectForm .createProject .form form .form-group.right {
+    margin-left: 3vw;
+  }
+  body .container-fluid .createProjectForm .createProject .form form button {
+    margin: 12px 0;
+    width: 150px;
+    border-radius: 0;
+    padding: 6px 24px;
+    border: 2px solid #eb5757;
+    text-transform: uppercase;
+    position: relative;
+    background: none;
+    margin-left: 1vw;
+  }
+  body .container-fluid .createProjectForm .createProject .form form button:hover:before {
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+  }
+  body .container-fluid .createProjectForm .createProject .form form button:before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: -5px;
+    height: calc(70%);
+    width: calc(108%);
+    background: #f1f0f6;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+  }
+  body .container-fluid .createProjectForm .createProject .form form button:hover:after {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+  body .container-fluid .createProjectForm .createProject .form form button:after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: -5px;
+    width: calc(88%);
+    height: calc(125%);
+    background: #f1f0f6;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+  }
+  body .container-fluid .createProjectForm .createProject .form form button span {
+    font-weight: 800;
+    color: #eb5757;
+    z-index: 3;
+    position: relative;
+  }
+  body .container-fluid .editProjectForm {
+    position: relative;
+    border-bottom: 3px solid #85889a;
+    margin-top: 7vh;
+    height: 110vh;
+  }
+  body .container-fluid .editProjectForm h1 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #eb5757;
+    margin-left: 5vw;
+  }
+  body .container-fluid .editProjectForm .createProject {
+    height: 100%;
+  }
+  body .container-fluid .editProjectForm .createProject .form {
+    width: 100%;
+    height: 90%;
+  }
+  body .container-fluid .editProjectForm .createProject .form form {
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  body .container-fluid .editProjectForm .createProject .form form .form-group {
+    padding: 12px 12px;
+    width: 50%;
+  }
+  body .container-fluid .editProjectForm .createProject .form form .form-group small {
+    font-weight: 800;
+  }
+  body .container-fluid .editProjectForm .createProject .form form .form-group input {
+    font-weight: 800;
+    color: #3b3d4a;
+    background: none;
+    border-radius: 0;
+    border-top: none;
+    border-bottom: none;
+    border-right: 2px solid #85889a;
+    border-left: 2px solid #85889a;
+  }
+  body .container-fluid .editProjectForm .createProject .form form .form-group textarea {
+    font-weight: 800;
+    color: #3b3d4a;
+    background: none;
+    border-radius: 0;
+    border-top: none;
+    border-bottom: none;
+    border-right: 2px solid #85889a;
+    border-left: 2px solid #85889a;
+  }
+  body .container-fluid .editProjectForm .createProject .form form .form-group.left {
+    margin-left: -3vw;
+  }
+  body .container-fluid .editProjectForm .createProject .form form .form-group.right {
+    margin-left: 3vw;
+  }
+  body .container-fluid .editProjectForm .createProject .form form button {
+    margin: 12px 0;
+    width: 150px;
+    border-radius: 0;
+    padding: 6px 24px;
+    border: 2px solid #eb5757;
+    text-transform: uppercase;
+    position: relative;
+    background: none;
+    margin-left: 1vw;
+  }
+  body .container-fluid .editProjectForm .createProject .form form button:hover:before {
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+  }
+  body .container-fluid .editProjectForm .createProject .form form button:before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: -5px;
+    height: calc(70%);
+    width: calc(108%);
+    background: #f1f0f6;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+  }
+  body .container-fluid .editProjectForm .createProject .form form button:hover:after {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+  body .container-fluid .editProjectForm .createProject .form form button:after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: -5px;
+    width: calc(88%);
+    height: calc(125%);
+    background: #f1f0f6;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+  }
+  body .container-fluid .editProjectForm .createProject .form form button span {
+    font-weight: 800;
+    color: #eb5757;
+    z-index: 3;
+    position: relative;
+  }
+  body .container-fluid .editProjectForm .editProject {
+    height: 100%;
+  }
+  body .container-fluid .editProjectForm .editProject .form {
+    width: 100%;
+    height: 90%;
+  }
+  body .container-fluid .editProjectForm .editProject .form form {
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  body .container-fluid .editProjectForm .editProject .form form .form-group {
+    padding: 12px 12px;
+    width: 50%;
+  }
+  body .container-fluid .editProjectForm .editProject .form form .form-group small {
+    font-weight: 800;
+  }
+  body .container-fluid .editProjectForm .editProject .form form .form-group input {
+    font-weight: 800;
+    color: #3b3d4a;
+    background: none;
+    border-radius: 0;
+    border-top: none;
+    border-bottom: none;
+    border-right: 2px solid #85889a;
+    border-left: 2px solid #85889a;
+  }
+  body .container-fluid .editProjectForm .editProject .form form .form-group textarea {
+    font-weight: 800;
+    color: #3b3d4a;
+    background: none;
+    border-radius: 0;
+    border-top: none;
+    border-bottom: none;
+    border-right: 2px solid #85889a;
+    border-left: 2px solid #85889a;
+  }
+  body .container-fluid .editProjectForm .editProject .form form .form-group.left {
+    margin-left: -3vw;
+  }
+  body .container-fluid .editProjectForm .editProject .form form .form-group.right {
+    margin-left: 3vw;
+  }
+  body .container-fluid .editProjectForm .editProject .form form button {
+    margin: 12px 0;
+    width: 150px;
+    border-radius: 0;
+    padding: 6px 24px;
+    border: 2px solid #eb5757;
+    text-transform: uppercase;
+    position: relative;
+    background: none;
+    margin-left: 1vw;
+  }
+  body .container-fluid .editProjectForm .editProject .form form button:hover:before {
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+  }
+  body .container-fluid .editProjectForm .editProject .form form button:before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: -5px;
+    height: calc(70%);
+    width: calc(108%);
+    background: #f1f0f6;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+  }
+  body .container-fluid .editProjectForm .editProject .form form button:hover:after {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+  body .container-fluid .editProjectForm .editProject .form form button:after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: -5px;
+    width: calc(88%);
+    height: calc(125%);
+    background: #f1f0f6;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+  }
+  body .container-fluid .editProjectForm .editProject .form form button span {
+    font-weight: 800;
+    color: #eb5757;
+    z-index: 3;
+    position: relative;
+  }
+  body .container-fluid .deleteProjectForm {
+    position: relative;
+    border-bottom: 3px solid #85889a;
+    height: 110vh;
+    margin-top: 7vh;
+    height: 35vh;
+  }
+  body .container-fluid .deleteProjectForm h1 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #eb5757;
+    margin-left: 5vw;
+  }
+  body .container-fluid .deleteProjectForm .createProject {
+    height: 100%;
+  }
+  body .container-fluid .deleteProjectForm .createProject .form {
+    width: 100%;
+    height: 90%;
+  }
+  body .container-fluid .deleteProjectForm .createProject .form form {
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  body .container-fluid .deleteProjectForm .createProject .form form .form-group {
+    padding: 12px 12px;
+    width: 50%;
+  }
+  body .container-fluid .deleteProjectForm .createProject .form form .form-group small {
+    font-weight: 800;
+  }
+  body .container-fluid .deleteProjectForm .createProject .form form .form-group input {
+    font-weight: 800;
+    color: #3b3d4a;
+    background: none;
+    border-radius: 0;
+    border-top: none;
+    border-bottom: none;
+    border-right: 2px solid #85889a;
+    border-left: 2px solid #85889a;
+  }
+  body .container-fluid .deleteProjectForm .createProject .form form .form-group textarea {
+    font-weight: 800;
+    color: #3b3d4a;
+    background: none;
+    border-radius: 0;
+    border-top: none;
+    border-bottom: none;
+    border-right: 2px solid #85889a;
+    border-left: 2px solid #85889a;
+  }
+  body .container-fluid .deleteProjectForm .createProject .form form .form-group.left {
+    margin-left: -3vw;
+  }
+  body .container-fluid .deleteProjectForm .createProject .form form .form-group.right {
+    margin-left: 3vw;
+  }
+  body .container-fluid .deleteProjectForm .createProject .form form button {
+    margin: 12px 0;
+    width: 150px;
+    border-radius: 0;
+    padding: 6px 24px;
+    border: 2px solid #eb5757;
+    text-transform: uppercase;
+    position: relative;
+    background: none;
+    margin-left: 1vw;
+  }
+  body .container-fluid .deleteProjectForm .createProject .form form button:hover:before {
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+  }
+  body .container-fluid .deleteProjectForm .createProject .form form button:before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: -5px;
+    height: calc(70%);
+    width: calc(108%);
+    background: #f1f0f6;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+  }
+  body .container-fluid .deleteProjectForm .createProject .form form button:hover:after {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+  body .container-fluid .deleteProjectForm .createProject .form form button:after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: -5px;
+    width: calc(88%);
+    height: calc(125%);
+    background: #f1f0f6;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+  }
+  body .container-fluid .deleteProjectForm .createProject .form form button span {
+    font-weight: 800;
+    color: #eb5757;
+    z-index: 3;
+    position: relative;
+  }
+  body .container-fluid .deleteProjectForm .deleteProject {
+    height: 100%;
+  }
+  body .container-fluid .deleteProjectForm .deleteProject .form {
+    width: 100%;
+    height: 90%;
+  }
+  body .container-fluid .deleteProjectForm .deleteProject .form form {
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  body .container-fluid .deleteProjectForm .deleteProject .form form .form-group {
+    padding: 12px 12px;
+    width: 50%;
+  }
+  body .container-fluid .deleteProjectForm .deleteProject .form form .form-group small {
+    font-weight: 800;
+  }
+  body .container-fluid .deleteProjectForm .deleteProject .form form .form-group input {
+    font-weight: 800;
+    color: #3b3d4a;
+    background: none;
+    border-radius: 0;
+    border-top: none;
+    border-bottom: none;
+    border-right: 2px solid #85889a;
+    border-left: 2px solid #85889a;
+  }
+  body .container-fluid .deleteProjectForm .deleteProject .form form .form-group textarea {
+    font-weight: 800;
+    color: #3b3d4a;
+    background: none;
+    border-radius: 0;
+    border-top: none;
+    border-bottom: none;
+    border-right: 2px solid #85889a;
+    border-left: 2px solid #85889a;
+  }
+  body .container-fluid .deleteProjectForm .deleteProject .form form .form-group.left {
+    margin-left: -3vw;
+  }
+  body .container-fluid .deleteProjectForm .deleteProject .form form .form-group.right {
+    margin-left: 3vw;
+  }
+  body .container-fluid .deleteProjectForm .deleteProject .form form button {
+    margin: 12px 0;
+    width: 150px;
+    border-radius: 0;
+    padding: 6px 24px;
+    border: 2px solid #eb5757;
+    text-transform: uppercase;
+    position: relative;
+    background: none;
+    margin-left: 1vw;
+  }
+  body .container-fluid .deleteProjectForm .deleteProject .form form button:hover:before {
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+  }
+  body .container-fluid .deleteProjectForm .deleteProject .form form button:before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: -5px;
+    height: calc(70%);
+    width: calc(108%);
+    background: #f1f0f6;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+  }
+  body .container-fluid .deleteProjectForm .deleteProject .form form button:hover:after {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+  body .container-fluid .deleteProjectForm .deleteProject .form form button:after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: -5px;
+    width: calc(88%);
+    height: calc(125%);
+    background: #f1f0f6;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+  }
+  body .container-fluid .deleteProjectForm .deleteProject .form form button span {
+    font-weight: 800;
+    color: #eb5757;
+    z-index: 3;
+    position: relative;
+  }
+}
+@media (max-width: 992px) and (min-width: 580px) {
+  body {
+    margin: 0;
+    padding: 0;
+    overflow-x: scroll;
+    color: #3b3d4a;
+    background: #f1f0f6;
+    font-family: "Maven Pro", sans-serif;
+  }
+  body::-webkit-scrollbar {
+    width: 7px;
+    background: none;
+  }
+  body::-webkit-scrollbar:horizontal {
+    height: 7px;
+    background: none;
+  }
+  body::-webkit-scrollbar-thumb {
+    width: 7px;
+    background: #f03c56;
+  }
+  body ::-moz-selection {
+    color: #f1f0f6;
+    background: #eb5757;
+  }
+  body ::selection {
+    color: #f1f0f6;
+    background: #eb5757;
+  }
+  body.active {
+    position: fixed;
+    width: 100vw;
+  }
+  body .container-fluid header .text {
+    margin-left: 3vw;
+    max-width: 300px;
+  }
+  body .container-fluid header .text div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  body .container-fluid header .text div h1 {
+    font-size: 96px;
+    font-weight: 900;
+    color: #3b3d4a;
+  }
+  body .container-fluid header .text div h1.highlight {
+    color: #eb5757;
+  }
+  body .container-fluid header .statistic .text {
+    width: 100vw;
+  }
+  body .container-fluid header .statistic .text h1 {
+    font-size: 30px;
+    color: #eb5757;
+    font-weight: 800;
+  }
+  body .container-fluid header .statistic .text div h3 {
+    font-weight: 800;
+    font-size: 24px;
+    padding: 0 30px;
+  }
+  body .container-fluid header .stats {
+    height: 40vh;
+  }
+  body .container-fluid .projects {
+    position: relative;
+    overflow-x: scroll;
+  }
+  body .container-fluid .projects .table tr td img {
+    width: 100%;
+  }
+  body .container-fluid .createProjectForm {
+    position: relative;
+    border-bottom: 3px solid #85889a;
+    height: 45vh;
+    margin-top: 7vh;
+  }
+  body .container-fluid .createProjectForm h1 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #eb5757;
+    margin-left: 5vw;
+  }
+  body .container-fluid .createProjectForm .createProject {
+    height: 100%;
+  }
+  body .container-fluid .createProjectForm .createProject .form {
+    width: 100%;
+    height: 90%;
+  }
+  body .container-fluid .createProjectForm .createProject .form form {
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  body .container-fluid .createProjectForm .createProject .form form .form-group {
+    padding: 12px 12px;
+    width: 50%;
+  }
+  body .container-fluid .createProjectForm .createProject .form form .form-group small {
+    font-weight: 800;
+  }
+  body .container-fluid .createProjectForm .createProject .form form .form-group input {
+    font-weight: 800;
+    color: #3b3d4a;
+    background: none;
+    border-radius: 0;
+    border-top: none;
+    border-bottom: none;
+    border-right: 2px solid #85889a;
+    border-left: 2px solid #85889a;
+  }
+  body .container-fluid .createProjectForm .createProject .form form .form-group textarea {
+    font-weight: 800;
+    color: #3b3d4a;
+    background: none;
+    border-radius: 0;
+    border-top: none;
+    border-bottom: none;
+    border-right: 2px solid #85889a;
+    border-left: 2px solid #85889a;
+  }
+  body .container-fluid .createProjectForm .createProject .form form .form-group.left {
+    margin-left: -3vw;
+  }
+  body .container-fluid .createProjectForm .createProject .form form .form-group.right {
+    margin-left: 3vw;
+  }
+  body .container-fluid .createProjectForm .createProject .form form button {
+    margin: 12px 0;
+    width: 150px;
+    border-radius: 0;
+    padding: 6px 24px;
+    border: 2px solid #eb5757;
+    text-transform: uppercase;
+    position: relative;
+    background: none;
+    margin-left: 1vw;
+  }
+  body .container-fluid .createProjectForm .createProject .form form button:hover:before {
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+  }
+  body .container-fluid .createProjectForm .createProject .form form button:before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: -5px;
+    height: calc(70%);
+    width: calc(108%);
+    background: #f1f0f6;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+  }
+  body .container-fluid .createProjectForm .createProject .form form button:hover:after {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+  body .container-fluid .createProjectForm .createProject .form form button:after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: -5px;
+    width: calc(88%);
+    height: calc(125%);
+    background: #f1f0f6;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+  }
+  body .container-fluid .createProjectForm .createProject .form form button span {
+    font-weight: 800;
+    color: #eb5757;
+    z-index: 3;
+    position: relative;
+  }
+  body .container-fluid .editProjectForm {
+    position: relative;
+    border-bottom: 3px solid #85889a;
+    height: 45vh;
+    margin-top: 7vh;
+    height: 55vh;
+  }
+  body .container-fluid .editProjectForm h1 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #eb5757;
+    margin-left: 5vw;
+  }
+  body .container-fluid .editProjectForm .createProject {
+    height: 100%;
+  }
+  body .container-fluid .editProjectForm .createProject .form {
+    width: 100%;
+    height: 90%;
+  }
+  body .container-fluid .editProjectForm .createProject .form form {
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  body .container-fluid .editProjectForm .createProject .form form .form-group {
+    padding: 12px 12px;
+    width: 50%;
+  }
+  body .container-fluid .editProjectForm .createProject .form form .form-group small {
+    font-weight: 800;
+  }
+  body .container-fluid .editProjectForm .createProject .form form .form-group input {
+    font-weight: 800;
+    color: #3b3d4a;
+    background: none;
+    border-radius: 0;
+    border-top: none;
+    border-bottom: none;
+    border-right: 2px solid #85889a;
+    border-left: 2px solid #85889a;
+  }
+  body .container-fluid .editProjectForm .createProject .form form .form-group textarea {
+    font-weight: 800;
+    color: #3b3d4a;
+    background: none;
+    border-radius: 0;
+    border-top: none;
+    border-bottom: none;
+    border-right: 2px solid #85889a;
+    border-left: 2px solid #85889a;
+  }
+  body .container-fluid .editProjectForm .createProject .form form .form-group.left {
+    margin-left: -3vw;
+  }
+  body .container-fluid .editProjectForm .createProject .form form .form-group.right {
+    margin-left: 3vw;
+  }
+  body .container-fluid .editProjectForm .createProject .form form button {
+    margin: 12px 0;
+    width: 150px;
+    border-radius: 0;
+    padding: 6px 24px;
+    border: 2px solid #eb5757;
+    text-transform: uppercase;
+    position: relative;
+    background: none;
+    margin-left: 1vw;
+  }
+  body .container-fluid .editProjectForm .createProject .form form button:hover:before {
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+  }
+  body .container-fluid .editProjectForm .createProject .form form button:before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: -5px;
+    height: calc(70%);
+    width: calc(108%);
+    background: #f1f0f6;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+  }
+  body .container-fluid .editProjectForm .createProject .form form button:hover:after {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+  body .container-fluid .editProjectForm .createProject .form form button:after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: -5px;
+    width: calc(88%);
+    height: calc(125%);
+    background: #f1f0f6;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+  }
+  body .container-fluid .editProjectForm .createProject .form form button span {
+    font-weight: 800;
+    color: #eb5757;
+    z-index: 3;
+    position: relative;
+  }
+  body .container-fluid .editProjectForm .editProject {
+    height: 100%;
+  }
+  body .container-fluid .editProjectForm .editProject .form {
+    width: 100%;
+    height: 90%;
+  }
+  body .container-fluid .editProjectForm .editProject .form form {
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  body .container-fluid .editProjectForm .editProject .form form .form-group {
+    padding: 12px 12px;
+    width: 50%;
+  }
+  body .container-fluid .editProjectForm .editProject .form form .form-group small {
+    font-weight: 800;
+  }
+  body .container-fluid .editProjectForm .editProject .form form .form-group input {
+    font-weight: 800;
+    color: #3b3d4a;
+    background: none;
+    border-radius: 0;
+    border-top: none;
+    border-bottom: none;
+    border-right: 2px solid #85889a;
+    border-left: 2px solid #85889a;
+  }
+  body .container-fluid .editProjectForm .editProject .form form .form-group textarea {
+    font-weight: 800;
+    color: #3b3d4a;
+    background: none;
+    border-radius: 0;
+    border-top: none;
+    border-bottom: none;
+    border-right: 2px solid #85889a;
+    border-left: 2px solid #85889a;
+  }
+  body .container-fluid .editProjectForm .editProject .form form .form-group.left {
+    margin-left: -3vw;
+  }
+  body .container-fluid .editProjectForm .editProject .form form .form-group.right {
+    margin-left: 3vw;
+  }
+  body .container-fluid .editProjectForm .editProject .form form button {
+    margin: 12px 0;
+    width: 150px;
+    border-radius: 0;
+    padding: 6px 24px;
+    border: 2px solid #eb5757;
+    text-transform: uppercase;
+    position: relative;
+    background: none;
+    margin-left: 1vw;
+  }
+  body .container-fluid .editProjectForm .editProject .form form button:hover:before {
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+  }
+  body .container-fluid .editProjectForm .editProject .form form button:before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: -5px;
+    height: calc(70%);
+    width: calc(108%);
+    background: #f1f0f6;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+  }
+  body .container-fluid .editProjectForm .editProject .form form button:hover:after {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+  body .container-fluid .editProjectForm .editProject .form form button:after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: -5px;
+    width: calc(88%);
+    height: calc(125%);
+    background: #f1f0f6;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+  }
+  body .container-fluid .editProjectForm .editProject .form form button span {
+    font-weight: 800;
+    color: #eb5757;
+    z-index: 3;
+    position: relative;
+  }
+  body .container-fluid .deleteProjectForm {
+    position: relative;
+    border-bottom: 3px solid #85889a;
+    height: 45vh;
+    margin-top: 7vh;
+    height: 25vh;
+  }
+  body .container-fluid .deleteProjectForm h1 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #eb5757;
+    margin-left: 5vw;
+  }
+  body .container-fluid .deleteProjectForm .createProject {
+    height: 100%;
+  }
+  body .container-fluid .deleteProjectForm .createProject .form {
+    width: 100%;
+    height: 90%;
+  }
+  body .container-fluid .deleteProjectForm .createProject .form form {
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  body .container-fluid .deleteProjectForm .createProject .form form .form-group {
+    padding: 12px 12px;
+    width: 50%;
+  }
+  body .container-fluid .deleteProjectForm .createProject .form form .form-group small {
+    font-weight: 800;
+  }
+  body .container-fluid .deleteProjectForm .createProject .form form .form-group input {
+    font-weight: 800;
+    color: #3b3d4a;
+    background: none;
+    border-radius: 0;
+    border-top: none;
+    border-bottom: none;
+    border-right: 2px solid #85889a;
+    border-left: 2px solid #85889a;
+  }
+  body .container-fluid .deleteProjectForm .createProject .form form .form-group textarea {
+    font-weight: 800;
+    color: #3b3d4a;
+    background: none;
+    border-radius: 0;
+    border-top: none;
+    border-bottom: none;
+    border-right: 2px solid #85889a;
+    border-left: 2px solid #85889a;
+  }
+  body .container-fluid .deleteProjectForm .createProject .form form .form-group.left {
+    margin-left: -3vw;
+  }
+  body .container-fluid .deleteProjectForm .createProject .form form .form-group.right {
+    margin-left: 3vw;
+  }
+  body .container-fluid .deleteProjectForm .createProject .form form button {
+    margin: 12px 0;
+    width: 150px;
+    border-radius: 0;
+    padding: 6px 24px;
+    border: 2px solid #eb5757;
+    text-transform: uppercase;
+    position: relative;
+    background: none;
+    margin-left: 1vw;
+  }
+  body .container-fluid .deleteProjectForm .createProject .form form button:hover:before {
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+  }
+  body .container-fluid .deleteProjectForm .createProject .form form button:before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: -5px;
+    height: calc(70%);
+    width: calc(108%);
+    background: #f1f0f6;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+  }
+  body .container-fluid .deleteProjectForm .createProject .form form button:hover:after {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+  body .container-fluid .deleteProjectForm .createProject .form form button:after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: -5px;
+    width: calc(88%);
+    height: calc(125%);
+    background: #f1f0f6;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+  }
+  body .container-fluid .deleteProjectForm .createProject .form form button span {
+    font-weight: 800;
+    color: #eb5757;
+    z-index: 3;
+    position: relative;
+  }
+  body .container-fluid .deleteProjectForm .deleteProject {
+    height: 100%;
+  }
+  body .container-fluid .deleteProjectForm .deleteProject .form {
+    width: 100%;
+    height: 90%;
+  }
+  body .container-fluid .deleteProjectForm .deleteProject .form form {
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  body .container-fluid .deleteProjectForm .deleteProject .form form .form-group {
+    padding: 12px 12px;
+    width: 50%;
+  }
+  body .container-fluid .deleteProjectForm .deleteProject .form form .form-group small {
+    font-weight: 800;
+  }
+  body .container-fluid .deleteProjectForm .deleteProject .form form .form-group input {
+    font-weight: 800;
+    color: #3b3d4a;
+    background: none;
+    border-radius: 0;
+    border-top: none;
+    border-bottom: none;
+    border-right: 2px solid #85889a;
+    border-left: 2px solid #85889a;
+  }
+  body .container-fluid .deleteProjectForm .deleteProject .form form .form-group textarea {
+    font-weight: 800;
+    color: #3b3d4a;
+    background: none;
+    border-radius: 0;
+    border-top: none;
+    border-bottom: none;
+    border-right: 2px solid #85889a;
+    border-left: 2px solid #85889a;
+  }
+  body .container-fluid .deleteProjectForm .deleteProject .form form .form-group.left {
+    margin-left: -3vw;
+  }
+  body .container-fluid .deleteProjectForm .deleteProject .form form .form-group.right {
+    margin-left: 3vw;
+  }
+  body .container-fluid .deleteProjectForm .deleteProject .form form button {
+    margin: 12px 0;
+    width: 150px;
+    border-radius: 0;
+    padding: 6px 24px;
+    border: 2px solid #eb5757;
+    text-transform: uppercase;
+    position: relative;
+    background: none;
+    margin-left: 1vw;
+  }
+  body .container-fluid .deleteProjectForm .deleteProject .form form button:hover:before {
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+  }
+  body .container-fluid .deleteProjectForm .deleteProject .form form button:before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: -5px;
+    height: calc(70%);
+    width: calc(108%);
+    background: #f1f0f6;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+  }
+  body .container-fluid .deleteProjectForm .deleteProject .form form button:hover:after {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+  body .container-fluid .deleteProjectForm .deleteProject .form form button:after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: -5px;
+    width: calc(88%);
+    height: calc(125%);
+    background: #f1f0f6;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+  }
+  body .container-fluid .deleteProjectForm .deleteProject .form form button span {
+    font-weight: 800;
+    color: #eb5757;
+    z-index: 3;
+    position: relative;
+  }
+}
+@media (min-width: 992px) and (max-width: 1400px) {
+  body {
+    margin: 0;
+    padding: 0;
+    overflow-x: scroll;
+    color: #3b3d4a;
+    background: #f1f0f6;
+    font-family: "Maven Pro", sans-serif;
+  }
+  body::-webkit-scrollbar {
+    width: 7px;
+    background: none;
+  }
+  body::-webkit-scrollbar:horizontal {
+    height: 7px;
+    background: none;
+  }
+  body::-webkit-scrollbar-thumb {
+    width: 7px;
+    background: #f03c56;
+  }
+  body ::-moz-selection {
+    color: #f1f0f6;
+    background: #eb5757;
+  }
+  body ::selection {
+    color: #f1f0f6;
+    background: #eb5757;
+  }
+  body.active {
+    position: fixed;
+    width: 100vw;
+  }
+  body .container-fluid header .text {
+    margin-left: 3vw;
+  }
+  body .container-fluid header .text div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  body .container-fluid header .text div h1 {
+    font-size: 96px;
+    font-weight: 900;
+    color: #3b3d4a;
+  }
+  body .container-fluid header .text div h1.highlight {
+    color: #eb5757;
+  }
+  body .container-fluid header .statistic h1 {
+    font-size: 30px;
+    color: #eb5757;
+    font-weight: 800;
+  }
+  body .container-fluid header .statistic div h3 {
+    font-weight: 800;
+    font-size: 24px;
+    padding: 0 30px;
+  }
+  body .container-fluid header .stats {
+    height: 40vh;
+  }
+  body .container-fluid .projects {
+    position: relative;
+  }
+  body .container-fluid .projects .table tr td img {
+    width: 100%;
+  }
+  body .container-fluid .createProjectForm {
+    position: relative;
+    border-bottom: 3px solid #85889a;
+    height: 45vh;
+    margin-top: 7vh;
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+  body .container-fluid .createProjectForm h1 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #eb5757;
+    margin-left: 5vw;
+  }
+  body .container-fluid .createProjectForm .createProject {
+    height: 100%;
+  }
+  body .container-fluid .createProjectForm .createProject .form {
+    width: 100%;
+    height: 90%;
+  }
+  body .container-fluid .createProjectForm .createProject .form form {
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  body .container-fluid .createProjectForm .createProject .form form .form-group {
+    padding: 12px 12px;
+    width: 50%;
+  }
+  body .container-fluid .createProjectForm .createProject .form form .form-group small {
+    font-weight: 800;
+  }
+  body .container-fluid .createProjectForm .createProject .form form .form-group input {
+    font-weight: 800;
+    color: #3b3d4a;
+    background: none;
+    border-radius: 0;
+    border-top: none;
+    border-bottom: none;
+    border-right: 2px solid #85889a;
+    border-left: 2px solid #85889a;
+  }
+  body .container-fluid .createProjectForm .createProject .form form .form-group textarea {
+    font-weight: 800;
+    color: #3b3d4a;
+    background: none;
+    border-radius: 0;
+    border-top: none;
+    border-bottom: none;
+    border-right: 2px solid #85889a;
+    border-left: 2px solid #85889a;
+  }
+  body .container-fluid .createProjectForm .createProject .form form .form-group.left {
+    margin-left: -3vw;
+  }
+  body .container-fluid .createProjectForm .createProject .form form .form-group.right {
+    margin-left: 3vw;
+  }
+  body .container-fluid .createProjectForm .createProject .form form button {
+    margin: 12px 0;
+    width: 105px;
+    border-radius: 0;
+    padding: 6px 24px;
+    border: 2px solid #eb5757;
+    text-transform: uppercase;
+    position: relative;
+    background: none;
+    margin-left: 1vw;
+  }
+  body .container-fluid .createProjectForm .createProject .form form button:hover:before {
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+  }
+  body .container-fluid .createProjectForm .createProject .form form button:before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: -2px;
+    height: calc(70%);
+    width: calc(105%);
+    background: #f1f0f6;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+  }
+  body .container-fluid .createProjectForm .createProject .form form button:hover:after {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+  body .container-fluid .createProjectForm .createProject .form form button:after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: -2px;
+    width: calc(88%);
+    height: calc(115%);
+    background: #f1f0f6;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+  }
+  body .container-fluid .createProjectForm .createProject .form form button span {
+    font-weight: 800;
+    color: #eb5757;
+    z-index: 3;
+    position: relative;
+  }
+  body .container-fluid .editProjectForm {
+    position: relative;
+    border-bottom: 3px solid #85889a;
+    height: 45vh;
+    margin-top: 7vh;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    height: 55vh;
+  }
+  body .container-fluid .editProjectForm h1 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #eb5757;
+    margin-left: 5vw;
+  }
+  body .container-fluid .editProjectForm .createProject {
+    height: 100%;
+  }
+  body .container-fluid .editProjectForm .createProject .form {
+    width: 100%;
+    height: 90%;
+  }
+  body .container-fluid .editProjectForm .createProject .form form {
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  body .container-fluid .editProjectForm .createProject .form form .form-group {
+    padding: 12px 12px;
+    width: 50%;
+  }
+  body .container-fluid .editProjectForm .createProject .form form .form-group small {
+    font-weight: 800;
+  }
+  body .container-fluid .editProjectForm .createProject .form form .form-group input {
+    font-weight: 800;
+    color: #3b3d4a;
+    background: none;
+    border-radius: 0;
+    border-top: none;
+    border-bottom: none;
+    border-right: 2px solid #85889a;
+    border-left: 2px solid #85889a;
+  }
+  body .container-fluid .editProjectForm .createProject .form form .form-group textarea {
+    font-weight: 800;
+    color: #3b3d4a;
+    background: none;
+    border-radius: 0;
+    border-top: none;
+    border-bottom: none;
+    border-right: 2px solid #85889a;
+    border-left: 2px solid #85889a;
+  }
+  body .container-fluid .editProjectForm .createProject .form form .form-group.left {
+    margin-left: -3vw;
+  }
+  body .container-fluid .editProjectForm .createProject .form form .form-group.right {
+    margin-left: 3vw;
+  }
+  body .container-fluid .editProjectForm .createProject .form form button {
+    margin: 12px 0;
+    width: 105px;
+    border-radius: 0;
+    padding: 6px 24px;
+    border: 2px solid #eb5757;
+    text-transform: uppercase;
+    position: relative;
+    background: none;
+    margin-left: 1vw;
+  }
+  body .container-fluid .editProjectForm .createProject .form form button:hover:before {
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+  }
+  body .container-fluid .editProjectForm .createProject .form form button:before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: -2px;
+    height: calc(70%);
+    width: calc(105%);
+    background: #f1f0f6;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+  }
+  body .container-fluid .editProjectForm .createProject .form form button:hover:after {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+  body .container-fluid .editProjectForm .createProject .form form button:after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: -2px;
+    width: calc(88%);
+    height: calc(115%);
+    background: #f1f0f6;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+  }
+  body .container-fluid .editProjectForm .createProject .form form button span {
+    font-weight: 800;
+    color: #eb5757;
+    z-index: 3;
+    position: relative;
+  }
+  body .container-fluid .editProjectForm .editProject {
+    height: 100%;
+  }
+  body .container-fluid .editProjectForm .editProject .form {
+    width: 100%;
+    height: 90%;
+  }
+  body .container-fluid .editProjectForm .editProject .form form {
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  body .container-fluid .editProjectForm .editProject .form form .form-group {
+    padding: 12px 12px;
+    width: 50%;
+  }
+  body .container-fluid .editProjectForm .editProject .form form .form-group small {
+    font-weight: 800;
+  }
+  body .container-fluid .editProjectForm .editProject .form form .form-group input {
+    font-weight: 800;
+    color: #3b3d4a;
+    background: none;
+    border-radius: 0;
+    border-top: none;
+    border-bottom: none;
+    border-right: 2px solid #85889a;
+    border-left: 2px solid #85889a;
+  }
+  body .container-fluid .editProjectForm .editProject .form form .form-group textarea {
+    font-weight: 800;
+    color: #3b3d4a;
+    background: none;
+    border-radius: 0;
+    border-top: none;
+    border-bottom: none;
+    border-right: 2px solid #85889a;
+    border-left: 2px solid #85889a;
+  }
+  body .container-fluid .editProjectForm .editProject .form form .form-group.left {
+    margin-left: -3vw;
+  }
+  body .container-fluid .editProjectForm .editProject .form form .form-group.right {
+    margin-left: 3vw;
+  }
+  body .container-fluid .editProjectForm .editProject .form form button {
+    margin: 12px 0;
+    width: 105px;
+    border-radius: 0;
+    padding: 6px 24px;
+    border: 2px solid #eb5757;
+    text-transform: uppercase;
+    position: relative;
+    background: none;
+    margin-left: 1vw;
+  }
+  body .container-fluid .editProjectForm .editProject .form form button:hover:before {
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+  }
+  body .container-fluid .editProjectForm .editProject .form form button:before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: -2px;
+    height: calc(70%);
+    width: calc(105%);
+    background: #f1f0f6;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+  }
+  body .container-fluid .editProjectForm .editProject .form form button:hover:after {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+  body .container-fluid .editProjectForm .editProject .form form button:after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: -2px;
+    width: calc(88%);
+    height: calc(115%);
+    background: #f1f0f6;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+  }
+  body .container-fluid .editProjectForm .editProject .form form button span {
+    font-weight: 800;
+    color: #eb5757;
+    z-index: 3;
+    position: relative;
+  }
+  body .container-fluid .deleteProjectForm {
+    position: relative;
+    border-bottom: 3px solid #85889a;
+    height: 45vh;
+    margin-top: 7vh;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    height: 25vh;
+  }
+  body .container-fluid .deleteProjectForm h1 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #eb5757;
+    margin-left: 5vw;
+  }
+  body .container-fluid .deleteProjectForm .createProject {
+    height: 100%;
+  }
+  body .container-fluid .deleteProjectForm .createProject .form {
+    width: 100%;
+    height: 90%;
+  }
+  body .container-fluid .deleteProjectForm .createProject .form form {
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  body .container-fluid .deleteProjectForm .createProject .form form .form-group {
+    padding: 12px 12px;
+    width: 50%;
+  }
+  body .container-fluid .deleteProjectForm .createProject .form form .form-group small {
+    font-weight: 800;
+  }
+  body .container-fluid .deleteProjectForm .createProject .form form .form-group input {
+    font-weight: 800;
+    color: #3b3d4a;
+    background: none;
+    border-radius: 0;
+    border-top: none;
+    border-bottom: none;
+    border-right: 2px solid #85889a;
+    border-left: 2px solid #85889a;
+  }
+  body .container-fluid .deleteProjectForm .createProject .form form .form-group textarea {
+    font-weight: 800;
+    color: #3b3d4a;
+    background: none;
+    border-radius: 0;
+    border-top: none;
+    border-bottom: none;
+    border-right: 2px solid #85889a;
+    border-left: 2px solid #85889a;
+  }
+  body .container-fluid .deleteProjectForm .createProject .form form .form-group.left {
+    margin-left: -3vw;
+  }
+  body .container-fluid .deleteProjectForm .createProject .form form .form-group.right {
+    margin-left: 3vw;
+  }
+  body .container-fluid .deleteProjectForm .createProject .form form button {
+    margin: 12px 0;
+    width: 105px;
+    border-radius: 0;
+    padding: 6px 24px;
+    border: 2px solid #eb5757;
+    text-transform: uppercase;
+    position: relative;
+    background: none;
+    margin-left: 1vw;
+  }
+  body .container-fluid .deleteProjectForm .createProject .form form button:hover:before {
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+  }
+  body .container-fluid .deleteProjectForm .createProject .form form button:before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: -2px;
+    height: calc(70%);
+    width: calc(105%);
+    background: #f1f0f6;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+  }
+  body .container-fluid .deleteProjectForm .createProject .form form button:hover:after {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+  body .container-fluid .deleteProjectForm .createProject .form form button:after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: -2px;
+    width: calc(88%);
+    height: calc(115%);
+    background: #f1f0f6;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+  }
+  body .container-fluid .deleteProjectForm .createProject .form form button span {
+    font-weight: 800;
+    color: #eb5757;
+    z-index: 3;
+    position: relative;
+  }
+  body .container-fluid .deleteProjectForm .deleteProject {
+    height: 100%;
+    overflow-x: hidden;
+  }
+  body .container-fluid .deleteProjectForm .deleteProject .form {
+    width: 100%;
+    height: 90%;
+  }
+  body .container-fluid .deleteProjectForm .deleteProject .form form {
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  body .container-fluid .deleteProjectForm .deleteProject .form form .form-group {
+    padding: 12px 12px;
+    width: 50%;
+  }
+  body .container-fluid .deleteProjectForm .deleteProject .form form .form-group small {
+    font-weight: 800;
+  }
+  body .container-fluid .deleteProjectForm .deleteProject .form form .form-group input {
+    font-weight: 800;
+    color: #3b3d4a;
+    background: none;
+    border-radius: 0;
+    border-top: none;
+    border-bottom: none;
+    border-right: 2px solid #85889a;
+    border-left: 2px solid #85889a;
+  }
+  body .container-fluid .deleteProjectForm .deleteProject .form form .form-group textarea {
+    font-weight: 800;
+    color: #3b3d4a;
+    background: none;
+    border-radius: 0;
+    border-top: none;
+    border-bottom: none;
+    border-right: 2px solid #85889a;
+    border-left: 2px solid #85889a;
+  }
+  body .container-fluid .deleteProjectForm .deleteProject .form form .form-group.left {
+    margin-left: -3vw;
+  }
+  body .container-fluid .deleteProjectForm .deleteProject .form form .form-group.right {
+    margin-left: 3vw;
+  }
+  body .container-fluid .deleteProjectForm .deleteProject .form form button {
+    margin: 12px 0;
+    width: 105px;
+    border-radius: 0;
+    padding: 6px 24px;
+    border: 2px solid #eb5757;
+    text-transform: uppercase;
+    position: relative;
+    background: none;
+    margin-left: 1vw;
+  }
+  body .container-fluid .deleteProjectForm .deleteProject .form form button:hover:before {
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+  }
+  body .container-fluid .deleteProjectForm .deleteProject .form form button:before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: -2px;
+    height: calc(70%);
+    width: calc(105%);
+    background: #f1f0f6;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+  }
+  body .container-fluid .deleteProjectForm .deleteProject .form form button:hover:after {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+  body .container-fluid .deleteProjectForm .deleteProject .form form button:after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: -2px;
+    width: calc(88%);
+    height: calc(115%);
+    background: #f1f0f6;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+  }
+  body .container-fluid .deleteProjectForm .deleteProject .form form button span {
+    font-weight: 800;
+    color: #eb5757;
+    z-index: 3;
+    position: relative;
+  }
+}
+@media (min-width: 1400px) {
+  body {
+    margin: 0;
+    padding: 0;
+    overflow-x: scroll;
+    color: #3b3d4a;
+    background: #f1f0f6;
+    font-family: "Maven Pro", sans-serif;
+  }
+  body::-webkit-scrollbar {
+    width: 7px;
+    background: none;
+  }
+  body::-webkit-scrollbar:horizontal {
+    height: 7px;
+    background: none;
+  }
+  body::-webkit-scrollbar-thumb {
+    width: 7px;
+    background: #f03c56;
+  }
+  body ::-moz-selection {
+    color: #f1f0f6;
+    background: #eb5757;
+  }
+  body ::selection {
+    color: #f1f0f6;
+    background: #eb5757;
+  }
+  body.active {
+    position: fixed;
+    width: 100vw;
+  }
+  body .container-fluid header .text {
+    margin-left: 3vw;
+  }
+  body .container-fluid header .text div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  body .container-fluid header .text div h1 {
+    font-size: 96px;
+    font-weight: 900;
+    color: #3b3d4a;
+  }
+  body .container-fluid header .text div h1.highlight {
+    color: #eb5757;
+  }
+  body .container-fluid header .statistic h1 {
+    font-size: 30px;
+    color: #eb5757;
+    font-weight: 800;
+  }
+  body .container-fluid header .statistic div h3 {
+    font-weight: 800;
+    font-size: 24px;
+    padding: 0 30px;
+  }
+  body .container-fluid header .stats {
+    height: 40vh;
+  }
+  body .container-fluid .projects {
+    position: relative;
+  }
+  body .container-fluid .projects .table tr td img {
+    width: 100%;
+  }
+  body .container-fluid .createProjectForm {
+    position: relative;
+    border-bottom: 3px solid #85889a;
+    height: 45vh;
+    margin-top: 7vh;
+  }
+  body .container-fluid .createProjectForm h1 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #eb5757;
+    margin-left: 5vw;
+  }
+  body .container-fluid .createProjectForm .createProject {
+    height: 100%;
+    overflow-x: scroll;
+  }
+  body .container-fluid .createProjectForm .createProject .form {
+    width: 100%;
+    height: 90%;
+  }
+  body .container-fluid .createProjectForm .createProject .form form {
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  body .container-fluid .createProjectForm .createProject .form form .form-group {
+    padding: 12px 12px;
+    width: 50%;
+  }
+  body .container-fluid .createProjectForm .createProject .form form .form-group small {
+    font-weight: 800;
+  }
+  body .container-fluid .createProjectForm .createProject .form form .form-group input {
+    font-weight: 800;
+    color: #3b3d4a;
+    background: none;
+    border-radius: 0;
+    border-top: none;
+    border-bottom: none;
+    border-right: 2px solid #85889a;
+    border-left: 2px solid #85889a;
+  }
+  body .container-fluid .createProjectForm .createProject .form form .form-group textarea {
+    font-weight: 800;
+    color: #3b3d4a;
+    background: none;
+    border-radius: 0;
+    border-top: none;
+    border-bottom: none;
+    border-right: 2px solid #85889a;
+    border-left: 2px solid #85889a;
+  }
+  body .container-fluid .createProjectForm .createProject .form form .form-group.left {
+    margin-left: -3vw;
+  }
+  body .container-fluid .createProjectForm .createProject .form form .form-group.right {
+    margin-left: 3vw;
+  }
+  body .container-fluid .createProjectForm .createProject .form form button {
+    margin: 12px 0;
+    width: 6vw;
+    border-radius: 0;
+    padding: 6px 24px;
+    border: 2px solid #eb5757;
+    text-transform: uppercase;
+    position: relative;
+    background: none;
+    margin-left: 1vw;
+  }
+  body .container-fluid .createProjectForm .createProject .form form button:hover:before {
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+  }
+  body .container-fluid .createProjectForm .createProject .form form button:before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: -2px;
+    height: calc(70%);
+    width: calc(105%);
+    background: #f1f0f6;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+  }
+  body .container-fluid .createProjectForm .createProject .form form button:hover:after {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+  body .container-fluid .createProjectForm .createProject .form form button:after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: -2px;
+    width: calc(88%);
+    height: calc(115%);
+    background: #f1f0f6;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+  }
+  body .container-fluid .createProjectForm .createProject .form form button span {
+    font-weight: 800;
+    color: #eb5757;
+    z-index: 3;
+    position: relative;
+  }
+  body .container-fluid .editProjectForm {
+    position: relative;
+    border-bottom: 3px solid #85889a;
+    height: 45vh;
+    margin-top: 7vh;
+    height: 55vh;
+  }
+  body .container-fluid .editProjectForm h1 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #eb5757;
+    margin-left: 5vw;
+  }
+  body .container-fluid .editProjectForm .createProject {
+    height: 100%;
+    overflow-x: scroll;
+  }
+  body .container-fluid .editProjectForm .createProject .form {
+    width: 100%;
+    height: 90%;
+  }
+  body .container-fluid .editProjectForm .createProject .form form {
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  body .container-fluid .editProjectForm .createProject .form form .form-group {
+    padding: 12px 12px;
+    width: 50%;
+  }
+  body .container-fluid .editProjectForm .createProject .form form .form-group small {
+    font-weight: 800;
+  }
+  body .container-fluid .editProjectForm .createProject .form form .form-group input {
+    font-weight: 800;
+    color: #3b3d4a;
+    background: none;
+    border-radius: 0;
+    border-top: none;
+    border-bottom: none;
+    border-right: 2px solid #85889a;
+    border-left: 2px solid #85889a;
+  }
+  body .container-fluid .editProjectForm .createProject .form form .form-group textarea {
+    font-weight: 800;
+    color: #3b3d4a;
+    background: none;
+    border-radius: 0;
+    border-top: none;
+    border-bottom: none;
+    border-right: 2px solid #85889a;
+    border-left: 2px solid #85889a;
+  }
+  body .container-fluid .editProjectForm .createProject .form form .form-group.left {
+    margin-left: -3vw;
+  }
+  body .container-fluid .editProjectForm .createProject .form form .form-group.right {
+    margin-left: 3vw;
+  }
+  body .container-fluid .editProjectForm .createProject .form form button {
+    margin: 12px 0;
+    width: 6vw;
+    border-radius: 0;
+    padding: 6px 24px;
+    border: 2px solid #eb5757;
+    text-transform: uppercase;
+    position: relative;
+    background: none;
+    margin-left: 1vw;
+  }
+  body .container-fluid .editProjectForm .createProject .form form button:hover:before {
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+  }
+  body .container-fluid .editProjectForm .createProject .form form button:before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: -2px;
+    height: calc(70%);
+    width: calc(105%);
+    background: #f1f0f6;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+  }
+  body .container-fluid .editProjectForm .createProject .form form button:hover:after {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+  body .container-fluid .editProjectForm .createProject .form form button:after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: -2px;
+    width: calc(88%);
+    height: calc(115%);
+    background: #f1f0f6;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+  }
+  body .container-fluid .editProjectForm .createProject .form form button span {
+    font-weight: 800;
+    color: #eb5757;
+    z-index: 3;
+    position: relative;
+  }
+  body .container-fluid .editProjectForm .editProject {
+    height: 100%;
+    overflow-x: scroll;
+  }
+  body .container-fluid .editProjectForm .editProject .form {
+    width: 100%;
+    height: 90%;
+  }
+  body .container-fluid .editProjectForm .editProject .form form {
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  body .container-fluid .editProjectForm .editProject .form form .form-group {
+    padding: 12px 12px;
+    width: 50%;
+  }
+  body .container-fluid .editProjectForm .editProject .form form .form-group small {
+    font-weight: 800;
+  }
+  body .container-fluid .editProjectForm .editProject .form form .form-group input {
+    font-weight: 800;
+    color: #3b3d4a;
+    background: none;
+    border-radius: 0;
+    border-top: none;
+    border-bottom: none;
+    border-right: 2px solid #85889a;
+    border-left: 2px solid #85889a;
+  }
+  body .container-fluid .editProjectForm .editProject .form form .form-group textarea {
+    font-weight: 800;
+    color: #3b3d4a;
+    background: none;
+    border-radius: 0;
+    border-top: none;
+    border-bottom: none;
+    border-right: 2px solid #85889a;
+    border-left: 2px solid #85889a;
+  }
+  body .container-fluid .editProjectForm .editProject .form form .form-group.left {
+    margin-left: -3vw;
+  }
+  body .container-fluid .editProjectForm .editProject .form form .form-group.right {
+    margin-left: 3vw;
+  }
+  body .container-fluid .editProjectForm .editProject .form form button {
+    margin: 12px 0;
+    width: 6vw;
+    border-radius: 0;
+    padding: 6px 24px;
+    border: 2px solid #eb5757;
+    text-transform: uppercase;
+    position: relative;
+    background: none;
+    margin-left: 1vw;
+  }
+  body .container-fluid .editProjectForm .editProject .form form button:hover:before {
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+  }
+  body .container-fluid .editProjectForm .editProject .form form button:before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: -2px;
+    height: calc(70%);
+    width: calc(105%);
+    background: #f1f0f6;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+  }
+  body .container-fluid .editProjectForm .editProject .form form button:hover:after {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+  body .container-fluid .editProjectForm .editProject .form form button:after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: -2px;
+    width: calc(88%);
+    height: calc(115%);
+    background: #f1f0f6;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+  }
+  body .container-fluid .editProjectForm .editProject .form form button span {
+    font-weight: 800;
+    color: #eb5757;
+    z-index: 3;
+    position: relative;
+  }
+  body .container-fluid .deleteProjectForm {
+    position: relative;
+    border-bottom: 3px solid #85889a;
+    height: 45vh;
+    margin-top: 7vh;
+    height: 25vh;
+  }
+  body .container-fluid .deleteProjectForm h1 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #eb5757;
+    margin-left: 5vw;
+  }
+  body .container-fluid .deleteProjectForm .createProject {
+    height: 100%;
+    overflow-x: scroll;
+  }
+  body .container-fluid .deleteProjectForm .createProject .form {
+    width: 100%;
+    height: 90%;
+  }
+  body .container-fluid .deleteProjectForm .createProject .form form {
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  body .container-fluid .deleteProjectForm .createProject .form form .form-group {
+    padding: 12px 12px;
+    width: 50%;
+  }
+  body .container-fluid .deleteProjectForm .createProject .form form .form-group small {
+    font-weight: 800;
+  }
+  body .container-fluid .deleteProjectForm .createProject .form form .form-group input {
+    font-weight: 800;
+    color: #3b3d4a;
+    background: none;
+    border-radius: 0;
+    border-top: none;
+    border-bottom: none;
+    border-right: 2px solid #85889a;
+    border-left: 2px solid #85889a;
+  }
+  body .container-fluid .deleteProjectForm .createProject .form form .form-group textarea {
+    font-weight: 800;
+    color: #3b3d4a;
+    background: none;
+    border-radius: 0;
+    border-top: none;
+    border-bottom: none;
+    border-right: 2px solid #85889a;
+    border-left: 2px solid #85889a;
+  }
+  body .container-fluid .deleteProjectForm .createProject .form form .form-group.left {
+    margin-left: -3vw;
+  }
+  body .container-fluid .deleteProjectForm .createProject .form form .form-group.right {
+    margin-left: 3vw;
+  }
+  body .container-fluid .deleteProjectForm .createProject .form form button {
+    margin: 12px 0;
+    width: 6vw;
+    border-radius: 0;
+    padding: 6px 24px;
+    border: 2px solid #eb5757;
+    text-transform: uppercase;
+    position: relative;
+    background: none;
+    margin-left: 1vw;
+  }
+  body .container-fluid .deleteProjectForm .createProject .form form button:hover:before {
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+  }
+  body .container-fluid .deleteProjectForm .createProject .form form button:before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: -2px;
+    height: calc(70%);
+    width: calc(105%);
+    background: #f1f0f6;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+  }
+  body .container-fluid .deleteProjectForm .createProject .form form button:hover:after {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+  body .container-fluid .deleteProjectForm .createProject .form form button:after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: -2px;
+    width: calc(88%);
+    height: calc(115%);
+    background: #f1f0f6;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+  }
+  body .container-fluid .deleteProjectForm .createProject .form form button span {
+    font-weight: 800;
+    color: #eb5757;
+    z-index: 3;
+    position: relative;
+  }
+  body .container-fluid .deleteProjectForm .deleteProject {
+    height: 100%;
+    overflow-x: scroll;
+    overflow-x: hidden;
+  }
+  body .container-fluid .deleteProjectForm .deleteProject .form {
+    width: 100%;
+    height: 90%;
+  }
+  body .container-fluid .deleteProjectForm .deleteProject .form form {
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  body .container-fluid .deleteProjectForm .deleteProject .form form .form-group {
+    padding: 12px 12px;
+    width: 50%;
+  }
+  body .container-fluid .deleteProjectForm .deleteProject .form form .form-group small {
+    font-weight: 800;
+  }
+  body .container-fluid .deleteProjectForm .deleteProject .form form .form-group input {
+    font-weight: 800;
+    color: #3b3d4a;
+    background: none;
+    border-radius: 0;
+    border-top: none;
+    border-bottom: none;
+    border-right: 2px solid #85889a;
+    border-left: 2px solid #85889a;
+  }
+  body .container-fluid .deleteProjectForm .deleteProject .form form .form-group textarea {
+    font-weight: 800;
+    color: #3b3d4a;
+    background: none;
+    border-radius: 0;
+    border-top: none;
+    border-bottom: none;
+    border-right: 2px solid #85889a;
+    border-left: 2px solid #85889a;
+  }
+  body .container-fluid .deleteProjectForm .deleteProject .form form .form-group.left {
+    margin-left: -3vw;
+  }
+  body .container-fluid .deleteProjectForm .deleteProject .form form .form-group.right {
+    margin-left: 3vw;
+  }
+  body .container-fluid .deleteProjectForm .deleteProject .form form button {
+    margin: 12px 0;
+    width: 6vw;
+    border-radius: 0;
+    padding: 6px 24px;
+    border: 2px solid #eb5757;
+    text-transform: uppercase;
+    position: relative;
+    background: none;
+    margin-left: 1vw;
+  }
+  body .container-fluid .deleteProjectForm .deleteProject .form form button:hover:before {
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+  }
+  body .container-fluid .deleteProjectForm .deleteProject .form form button:before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: -2px;
+    height: calc(70%);
+    width: calc(105%);
+    background: #f1f0f6;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+  }
+  body .container-fluid .deleteProjectForm .deleteProject .form form button:hover:after {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+  body .container-fluid .deleteProjectForm .deleteProject .form form button:after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: -2px;
+    width: calc(88%);
+    height: calc(115%);
+    background: #f1f0f6;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+  }
+  body .container-fluid .deleteProjectForm .deleteProject .form form button span {
+    font-weight: 800;
+    color: #eb5757;
+    z-index: 3;
+    position: relative;
+  }
+}

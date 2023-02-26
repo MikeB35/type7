@@ -1,0 +1,375 @@
+/*
+************************************
+          MIKSINES, VARIABLES
+************************************
+ */
+@backG: #F1F0F6;
+@grey: #2b2b2b;
+@blue: #3B3D4A;
+@lightBlue: #85889A;
+@orange: #f03c56;
+@hiLight: #eb5757;
+@buttShad: -5px -5px 15px #ffffff,
+10px 10px 20px rgba(13, 39, 80, 0.16);
+@boxShad: -15px -15px 25px #ffffff,
+15px 15px 30px rgba(13, 39, 80, 0.16);
+//▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨
+// XSmall devices (phones, 375px and up)
+//▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨
+@media (max-width: 576px){
+  body{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    color: @blue;
+    background: @backG;
+    font-family: "Maven Pro", sans-serif;
+    &::-webkit-scrollbar {
+      width: 7px;
+      background: none;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      width: 7px;
+      background: @orange;
+    }
+    ::selection {
+      color: @backG;
+      background: @hiLight;
+    }
+    &.active{
+      position: fixed;
+      width: 100vw;
+    }
+    .container{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 70vh;
+      width: 100vw;
+      .text{
+        text-align: center;
+        h1{
+          color: @hiLight;
+          font-weight: 900;
+
+        }
+        h3{
+          font-weight: 800;
+          margin-top: 30px;
+          margin-bottom: 50px;
+        }
+        .card-link{
+          padding: 12px 24px;
+          border: 2px solid @hiLight;
+          text-transform: uppercase;
+          position: relative;
+          &:hover:before{
+            transform: scaleY(0);
+          }
+          &:before{
+            content: '';
+            position: absolute;
+            top:6px;
+            left: -2px;
+            height: calc(100% - 30px);
+            width: calc(100% + 5px);
+            background: @backG;
+            transition: 0.3s ease-in-out;
+
+          }
+          &:hover:after{
+            transform: scaleX(0);
+          }
+          &:after{
+            content: '';
+            position: absolute;
+            left:8px;
+            top: -2px;
+            width: calc(100% - 12px);
+            height: calc(100% + 15px);
+            background: @backG;
+            transition: 0.3s ease-in-out;
+
+          }
+          span{
+            font-weight: 800;
+            color: @hiLight;
+            z-index: 3;
+            position: relative;
+          }
+        }
+      }
+    }
+  }
+}
+//▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨
+// Medium devices (tablets, 992px and down)
+//▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨
+@media (max-width: 992px) and (min-width: 580px){
+  body{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    color: @blue;
+    background: @backG;
+    font-family: "Maven Pro", sans-serif;
+    &::-webkit-scrollbar {
+      width: 7px;
+      background: none;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      width: 7px;
+      background: @orange;
+    }
+    ::selection {
+      color: @backG;
+      background: @hiLight;
+    }
+    &.active{
+      position: fixed;
+      width: 100vw;
+    }
+    .container{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 70vh;
+      width: 100vw;
+      .text{
+        text-align: center;
+        h1{
+          color: @hiLight;
+          font-weight: 900;
+
+        }
+        h3{
+          font-weight: 800;
+          margin-top: 30px;
+          margin-bottom: 50px;
+        }
+        .card-link{
+          padding: 12px 24px;
+          border: 2px solid @hiLight;
+          text-transform: uppercase;
+          position: relative;
+          &:hover:before{
+            transform: scaleY(0);
+          }
+          &:before{
+            content: '';
+            position: absolute;
+            top:6px;
+            left: -2px;
+            height: calc(100% - 30px);
+            width: calc(100% + 5px);
+            background: @backG;
+            transition: 0.3s ease-in-out;
+
+          }
+          &:hover:after{
+            transform: scaleX(0);
+          }
+          &:after{
+            content: '';
+            position: absolute;
+            left:8px;
+            top: -2px;
+            width: calc(100% - 12px);
+            height: calc(100% + 15px);
+            background: @backG;
+            transition: 0.3s ease-in-out;
+
+          }
+          span{
+            font-weight: 800;
+            color: @hiLight;
+            z-index: 3;
+            position: relative;
+          }
+        }
+      }
+    }
+  }
+}
+//▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨
+// Large devices (desktops, laptop, 992px and up)
+//▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨
+@media (min-width: 992px)and (max-width: 1400px){
+  body{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    color: @blue;
+    background: @backG;
+    font-family: "Maven Pro", sans-serif;
+    &::-webkit-scrollbar {
+      width: 7px;
+      background: none;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      width: 7px;
+      background: @orange;
+    }
+    ::selection {
+      color: @backG;
+      background: @hiLight;
+    }
+    &.active{
+      position: fixed;
+      width: 100vw;
+    }
+    .container{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 70vh;
+      width: 100vw;
+      .text{
+        text-align: center;
+        h1{
+          color: @hiLight;
+          font-weight: 900;
+
+        }
+        h3{
+          font-weight: 800;
+          margin-top: 30px;
+          margin-bottom: 50px;
+        }
+        .card-link{
+          padding: 12px 24px;
+          border: 2px solid @hiLight;
+          text-transform: uppercase;
+          position: relative;
+          &:hover:before{
+            transform: scaleY(0);
+          }
+          &:before{
+            content: '';
+            position: absolute;
+            top:6px;
+            left: -2px;
+            height: calc(100% - 30px);
+            width: calc(100% + 5px);
+            background: @backG;
+            transition: 0.3s ease-in-out;
+
+          }
+          &:hover:after{
+            transform: scaleX(0);
+          }
+          &:after{
+            content: '';
+            position: absolute;
+            left:8px;
+            top: -2px;
+            width: calc(100% - 12px);
+            height: calc(100% + 15px);
+            background: @backG;
+            transition: 0.3s ease-in-out;
+
+          }
+          span{
+            font-weight: 800;
+            color: @hiLight;
+            z-index: 3;
+            position: relative;
+          }
+        }
+      }
+    }
+  }
+}
+//▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨
+// Large devices (desktops, laptop, 992px and up)
+//▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨
+@media (min-width: 1400px){
+  body{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    color: @blue;
+    background: @backG;
+    font-family: "Maven Pro", sans-serif;
+    &::-webkit-scrollbar {
+      width: 7px;
+      background: none;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      width: 7px;
+      background: @orange;
+    }
+    ::selection {
+      color: @backG;
+      background: @hiLight;
+    }
+    &.active{
+      position: fixed;
+      width: 100vw;
+    }
+    .container{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 70vh;
+      width: 100vw;
+      .text{
+        text-align: center;
+        h1{
+          color: @hiLight;
+          font-weight: 900;
+
+        }
+        h3{
+          font-weight: 800;
+          margin-top: 30px;
+          margin-bottom: 50px;
+        }
+        .card-link{
+          padding: 12px 24px;
+          border: 2px solid @hiLight;
+          text-transform: uppercase;
+          position: relative;
+          &:hover:before{
+            transform: scaleY(0);
+          }
+          &:before{
+            content: '';
+            position: absolute;
+            top:6px;
+            left: -2px;
+            height: calc(100% - 30px);
+            width: calc(100% + 5px);
+            background: @backG;
+            transition: 0.3s ease-in-out;
+
+          }
+          &:hover:after{
+            transform: scaleX(0);
+          }
+          &:after{
+            content: '';
+            position: absolute;
+            left:8px;
+            top: -2px;
+            width: calc(100% - 12px);
+            height: calc(100% + 15px);
+            background: @backG;
+            transition: 0.3s ease-in-out;
+
+          }
+          span{
+            font-weight: 800;
+            color: @hiLight;
+            z-index: 3;
+            position: relative;
+          }
+        }
+      }
+    }
+  }
+}
