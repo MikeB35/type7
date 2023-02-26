@@ -32,9 +32,9 @@
 
 ## Run locally
 
->   ### Download zip -> https://github.com/MikeB35/type7
+>   #### Download zip -> https://github.com/MikeB35/type7
 
->   ### Download MySQL Workbench -> https://dev.mysql.com/downloads/workbench/
+>   #### Download MySQL Workbench -> https://dev.mysql.com/downloads/workbench/
 >   1. Create a Schema(database)
 >   2. Import SQL files (server -> Import Data -> Import from Self-Contained File) or create a **New Table**
 >   3. Create a new user:
@@ -47,7 +47,7 @@
 >   5. Create a new connection: server: *127.0.0.1* login: *sqluser* password: *password*
 >   6. Click *+Connect* to check the connection, than *Save*
 
->   ### Download PHP 8.2 (VS16 x64 Thread Safe) or later version -> https://windows.php.net/download#php-8.2
+>   #### Download PHP 8.2 (VS16 x64 Thread Safe) or later version -> https://windows.php.net/download#php-8.2
 >   1. Extract files from zip and move them to **C:/** Disk 
 >   2. Rename folder to **php**
 >   3. In folder create *php.ini* file and write **extension=mysqli** in it
