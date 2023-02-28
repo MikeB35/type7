@@ -2,7 +2,7 @@
 if (isset($_POST['send'])) {
     $id = $_POST["id"];
     $name = $_POST["name"];
-    $image = $_POST["get_image"];
+    // $image = $_POST["get_image"];
     $smallD = $_POST["smallD"];
     $discrip = $_POST["discrip"];
     $orderedBy = $_POST["orderedBy"];
@@ -10,7 +10,7 @@ if (isset($_POST['send'])) {
     $developer = $_POST["developer"];
     $time = $_POST["time"];
     $design = $_POST["design"];
-    $designImg = $_POST["get_designImg"];
+    // $designImg = $_POST["get_designImg"];
     $designD = $_POST["designD"];
     $designL = $_POST["designL"];
     $link = $_POST["link"];
@@ -18,17 +18,18 @@ if (isset($_POST['send'])) {
     $business = $_POST["business"];
     $sure = $_POST["sure"];
 
-    $img_type = substr($_FILES['get_image']['type'], 0, 5);
+    $img_type1 = substr($_FILES['get_image']['type'], 0, 5);
+    $img_type2 = substr($_FILES['get_image']['type'], 0, 5);
     $img_size = 2 * 2048 * 2048;
 
     //▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨ DESIGN_IMAGE ▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨
 
-    if (!empty($_FILES['get_designImg']['tmp_name']) and $img_type === 'image' and $_FILES['get_designImg']['size'] <= $img_size) {
+    if (!empty($_FILES['get_designImg']['tmp_name']) and $img_type2 === 'image' and $_FILES['get_designImg']['size'] <= $img_size) {
         $designImg = addslashes(file_get_contents($_FILES['get_designImg']['tmp_name']));
     }
 
     //▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨ PROJECT_IMAGE ▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨
-    if (!empty($_FILES['get_image']['tmp_name']) and $img_type === 'image' and $_FILES['get_image']['size'] <= $img_size) {
+    if (!empty($_FILES['get_image']['tmp_name']) and $img_type1 === 'image' and $_FILES['get_image']['size'] <= $img_size) {
         $img = addslashes(file_get_contents($_FILES['get_image']['tmp_name']));
     }
     if ($name != "" && $sure === "on") { # IF CONTENT OR TITLE AREN'T EMPTY
@@ -57,8 +58,10 @@ VALUES ('$id', '$name', '$img', '$smallD','$discrip', '$orderedBy', '$designer',
         //!--------------------------
 
         if ($mysqli->query($sql) === TRUE) {
-            echo "<div style='width: 100%; height: 100%; display: flex;justify-content: center;align-items: center'><div style='text-align: center; font-family: \"Maven Pro\", sans-serif; font-weight: 800'><h1 style='color: #3B3D4A'>New record created successfully</h1> <br/>
-            <a href='../../A83hD94dM05Igdr5N.php style='text-decoration:none;''><h2 style='color: #f03c56'>BACK</h2></a> <br/></div></div>";
+            echo "</br>";
+            echo '<p style="color:#6ce619; font-weight:900;margin:0;">' . date("Y/m/d ~ h:i:s ") . " ⋙ new record is successfully created ⟲ </p>";
+            echo "<div style='width: 100%; height: 20%; display: flex;justify-content: center;align-items: center'><div style='text-align: center; font-family: \"Maven Pro\", sans-serif; font-weight: 800'><h1 style='color: #3B3D4A'>New record created successfully</h1> <br/>
+            <a href='../../A83hD94dM05Igdr5N.php' style='text-decoration:none;'><h2 style='color: #f03c56'>BACK</h2></a> <br/></div></div>";
         } else {
             echo "<div style='width: 100%; height: 100%; display: flex;justify-content: center;align-items: center'><div style='text-align: center; font-family: \"Maven Pro\", sans-serif; font-weight: 800'><h1 style='color: #3B3D4A'>
 \"Error: \" . $sql . \"<br>\" . $mysqli->error
