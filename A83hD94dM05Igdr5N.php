@@ -135,7 +135,7 @@ $mysqli->close();
             <div class="col-md-6 form">
                 <form action="A251fDinM9I1N_f/projects/createProject.php" enctype="multipart/form-data" name="createProject" method="post">
                     <div class="form-group">
-                        <input name="id" type="number" aria-label="" class="form-control" id="nameInput"  placeholder="ID" >
+                        <input name="id" type="number" aria-label="" class="form-control" id="nameInput"  placeholder="ID -NOT REQUIRED-" >
                     </div>
                     <div class="form-group">
                         <input name="name" type="text" aria-label="" class="form-control" id="nameInput"  placeholder="NAME" >
@@ -166,7 +166,7 @@ $mysqli->close();
                     </div>
 
                     <div class="form-group">
-                        <input name="design" type="text" aria-label="" class="form-control" placeholder="DESIGN (EAZY/HARDER/NICE)">
+                        <input name="design" type="text" aria-label="" class="form-control" placeholder="DESIGN (EAZY/GOOD/NICE)">
                     </div>
                     <div class="form-group">
                         <label for="image">FILE INPUT</label>
@@ -179,13 +179,13 @@ $mysqli->close();
                         <input name="designL" type="text" aria-label="" class="form-control" placeholder="DESIGN LINK">
                     </div>
                     <div class="form-group">
-                        <input name="link" type="text" aria-label="" class="form-control" placeholder="LINK">
+                        <input name="link" type="text" aria-label="" class="form-control" placeholder="LINK TO WEB">
                     </div>
                     <div class="form-group">
-                        <input name="status" type="text" aria-label="" class="form-control" placeholder="STATUS">
+                        <input name="status" type="text" aria-label="" class="form-control" placeholder="STATUS (PLANNED/IN PROCESS/DONE)">
                     </div>
                     <div class="form-group">
-                        <input name="business" type="text" aria-label="" class="form-control" placeholder="BUSINESS">
+                        <input name="business" type="text" aria-label="" class="form-control" placeholder="BUSINESS(SMALL/MEDIUM/BIG)">
                     </div>
                     <div class="form-check">
                         <input name="sure" type="checkbox" class="form-check-input" id="sure" required>
@@ -202,7 +202,7 @@ $mysqli->close();
             <div class="col-md-6 form">
                 <form enctype="multipart/form-data" method="post" action="A251fDinM9I1N_f/projects/editProject.php">
                     <div class="form-group">
-                        <input name="id" type="text" aria-label="" class="form-control" id="nameInput"  placeholder="ID" >
+                        <input name="id" type="text" aria-label="" class="form-control" id="nameInput"  placeholder="ID !REQUIRED!" required>
                     </div>
                     <div class="form-group">
                         <input name="name" type="text" aria-label="" class="form-control" id="nameInput"  placeholder="NAME" >
@@ -233,7 +233,7 @@ $mysqli->close();
                     </div>
 
                     <div class="form-group">
-                        <input name="design" type="text" aria-label="" class="form-control" placeholder="DESIGN (EAZY/HARDER/NICE)">
+                        <input name="design" type="text" aria-label="" class="form-control" placeholder="DESIGN (EAZY/GOOD/NICE)">
                     </div>
                     <div class="form-group">
                         <label for="image">FILE INPUT</label>
@@ -246,13 +246,13 @@ $mysqli->close();
                         <input name="designL" type="text" aria-label="" class="form-control" placeholder="DESIGN LINK">
                     </div>
                     <div class="form-group">
-                        <input name="link" type="text" aria-label="" class="form-control" placeholder="LINK">
+                        <input name="link" type="text" aria-label="" class="form-control" placeholder="LINK TO WEB">
                     </div>
                     <div class="form-group">
-                        <input name="status" type="text" aria-label="" class="form-control" placeholder="STATUS">
+                        <input name="status" type="text" aria-label="" class="form-control" placeholder="STATUS(PLANNED/IN PROCESS/DONE)">
                     </div>
                     <div class="form-group">
-                        <input name="business" type="text" aria-label="" class="form-control" placeholder="BUSINESS">
+                        <input name="business" type="text" aria-label="" class="form-control" placeholder="BUSINESS (SMALL/MEDIUM/BIG)">
                     </div>
                     <div class="form-check">
                         <input name="sure" type="checkbox" class="form-check-input" id="sure" required>

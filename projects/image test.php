@@ -14,7 +14,7 @@
 require "../source/php/require_f_projects/menu.php";
 ?>
 <?
-$project = "kokos";
+$project = "image test";
 $mysqli = new mysqli("localhost","sqluser","password","type7eu") or die("Connect failed: %s\n". $mysqli -> error);
 $mysqli -> query("SET NAMES 'utf8'");
 
@@ -119,7 +119,7 @@ if ($design === 'nice' | $design === 'Nice' | $design === 'NICE'){
                     <td>WEBSITE LINK:<a href="<?=$link?>"><p><?=$link?></p></a></td>
                     <td>BUSINESS:<p><?=$business?></p></td>
                     <td class="part2">DESIGN:</td>
-                    <td>Good:
+                    <td>eazy:
                         <div class="type" id="_1" style="
                         background: <?=$designColor1?>;
                         margin: 10px;

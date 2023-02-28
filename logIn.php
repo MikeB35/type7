@@ -21,7 +21,7 @@ if (isset($_POST['login'])){
 
 //███████████████████████SET COOKIE███████████████████████
 //!-------------------SECURITY COOKIE---------------------
-    if ($name == ('mike' || 'Mike') && $password === 'CybSec26' && $t7code === '42501'){
+    if ($name == ('123' || '123') && $password === '123' && $t7code === '123'){
         $cookieCode = array('gDt4-$8bs-@nDka-Lja2', 'gs6$-Bia7-Gard-D%ja', 'Q843-st67-2tes-Fe34', '472v-74nf-D93s-kjg4');
         setcookie('TRU$TED', $cookieCode[rand(0,3)], time() + 1800);
         print '<script type="text/javascript">window.location.replace("A83hD94dM05Igdr5N.php");</script>';

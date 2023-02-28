@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
@@ -13,8 +14,8 @@
 require "../source/php/require_f_projects/menu.php";
 ?>
 <?
-$project = 'TYPE7 COMMUNITY';
-$mysqli = new mysqli("localhost","mike","CybSec26","type7") or die("Connect failed: %s\n". $mysqli -> error);
+$project = "";
+$mysqli = new mysqli("localhost","sqluser","password","type7eu") or die("Connect failed: %s\n". $mysqli -> error);
 $mysqli -> query("SET NAMES 'utf8'");
 
 $projects = $mysqli ->query("SELECT * FROM `projects` WHERE `name`='$project'");
@@ -82,8 +83,8 @@ if ($design === 'nice' | $design === 'Nice' | $design === 'NICE'){
                         </script>
                         <!-- uSocial -->
                         <div class="shareOptions" id="shareOptions">
-                            <script async src="https://usocial.pro/usocial/usocial.js?uid=1ad8756c94f58458&v=6.1.5" data-script="usocial" charset="utf-8"></script>
-                            <div class="uSocial-Share" data-lang="en" data-pid="9319c303f51e8e905f7fb0d86b836def" data-type="share" data-options="rect,style1,default,absolute,horizontal,size32,eachCounter0,counter0" data-social="twi,wa,telegram,fb,spoiler" data-mobile="sms"></div>
+                            <script async src="https://usocial.pro/usocial/usocial.js?uid=903ac46812f58458&v=6.1.5" data-script="usocial" charset="utf-8"></script>
+                            <div class="uSocial-Share" data-lang="en" data-pid="9319c303f51e8e905f7fb0d86b836def" data-type="share" data-options="rect,style1,default,absolute,horizontal,size32,eachCounter0,counter0,nomobile" data-social="twi,wa,telegram,fb,spoiler"></div>
                         </div>
                         <!-- /uSocial -->
                     </div>
@@ -115,9 +116,10 @@ if ($design === 'nice' | $design === 'Nice' | $design === 'NICE'){
                     <td>DESIGN:<p><?=$designer?></p></td>
                     <td>DEVELOPER:<p><?=$developer?></p></td>
                     <td>ELAPSED TIME:<p><?=$time?>hours</p></td>
-                    <td>WEBSITE LINK:<p><?=$link?></p></td>
+                    <td>WEBSITE LINK:<a href="<?=$link?>"><p><?=$link?></p></a></td>
+                    <td>BUSINESS:<p><?=$business?></p></td>
                     <td class="part2">DESIGN:</td>
-                    <td>NICE:
+                    <td>:
                         <div class="type" id="_1" style="
                         background: <?=$designColor1?>;
                         margin: 10px;
@@ -181,3 +183,5 @@ require '../source/php/require_f_projects/footer.php';
 <script src="source/bootstrap/js/bootstrap.js"></script>
 </body>
 </html>
+
+    

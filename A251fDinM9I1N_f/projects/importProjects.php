@@ -57,7 +57,8 @@ function create($projects){
                 </tr>";
     }
 }
-if ($projects->fetch_assoc()!= false) {
-    create($projects);
-}
+// if ($projects->fetch_assoc()!= false) {
+//     create($projects);
+// }
+create($projects);
 ?>

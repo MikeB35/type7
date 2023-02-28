@@ -10,7 +10,7 @@ if (isset($_POST['send'])) {
     $developer = $_POST["developer"];
     $time = $_POST["time"];
     $design = $_POST["design"];
-    $designImg = $_POST["designImg"];
+    $designImg = $_POST["get_designImg"];
     $designD = $_POST["designD"];
     $designL = $_POST["designL"];
     $link = $_POST["link"];
@@ -34,23 +34,36 @@ if (isset($_POST['send'])) {
     if ($name != "" && $sure === "on") { # IF CONTENT OR TITLE AREN'T EMPTY
 
         //CONNECT TO DATABASE
-        $mysqli = new mysqli("localhost","sqluser","password","type7eu
-        ") or die("Connect failed: %s\n". $mysqli -> error);
+        $mysqli = new mysqli("localhost","sqluser","password","type7eu") or die("Connect failed: %s\n". $mysqli -> error);
         $mysqli->query("SET NAMES 'utf8'");
 
 // Check connection
-        $sql = "INSERT INTO `projects` (`id`, `name`, `image`, `small_discrip`, `discrip`, `ordered_by`, `designer`, `developer`, `time`,`design`, `design_img`,`design_descrip`, `design_link`, `link`, `status`, `business`)
+//!--------------------------
+//*---------IF RECORD HAS EMPTY ID -> CREATE A NEW ONE----------
+    if(empty($id)){
+        $lastRow = $mysqli->query("SELECT * FROM `projects` ORDER BY id DESC LIMIT 1"); //? GET LAST RECORD
+        // echo '<pre>'; print_r($lastRow); echo '</pre>';
+        $elements = $lastRow->fetch_assoc(); //? SEPARATE RECORD ON COLUMNS
+        $lastID = $elements['id']; //? GET THE ID COLUMN VALUE
+        // echo $lastID;
+        $newID = $lastID + 1;
+        // echo $newID;
+        $sql = "INSERT INTO `projects` (`id`, `name`, `image`, `small_discrip`, `discrip`, `ordered_by`, `designer`, `developer`, `time`, `design`, `design_img`,`design_descrip`, `design_link`, `link`, `status`, `business`)
+VALUES ('$newID', '$name', '$img', '$smallD','$discrip', '$orderedBy', '$designer', '$developer', '$time','$design', '$designImg','$designD', '$designL', '$link','$status','$business')";
+    }else{
+        $sql = "INSERT INTO `projects` (`id`, `name`, `image`, `small_discrip`, `discrip`, `ordered_by`, `designer`, `developer`, `time`,   `design`, `design_img`,`design_descrip`, `design_link`, `link`, `status`, `business`)
 VALUES ('$id', '$name', '$img', '$smallD','$discrip', '$orderedBy', '$designer', '$developer', '$time','$design', '$designImg','$designD', '$designL', '$link','$status','$business')";
-
+    }
+        //!--------------------------
 
         if ($mysqli->query($sql) === TRUE) {
             echo "<div style='width: 100%; height: 100%; display: flex;justify-content: center;align-items: center'><div style='text-align: center; font-family: \"Maven Pro\", sans-serif; font-weight: 800'><h1 style='color: #3B3D4A'>New record created successfully</h1> <br/>
-            <a href='../../A83hD94dM05Igdr5N.php'><h2 style='color: #f03c56'>BACK</h2></a> <br/></div></div>";
+            <a href='../../A83hD94dM05Igdr5N.php style='text-decoration:none;''><h2 style='color: #f03c56'>BACK</h2></a> <br/></div></div>";
         } else {
             echo "<div style='width: 100%; height: 100%; display: flex;justify-content: center;align-items: center'><div style='text-align: center; font-family: \"Maven Pro\", sans-serif; font-weight: 800'><h1 style='color: #3B3D4A'>
 \"Error: \" . $sql . \"<br>\" . $mysqli->error
 </h1> <br/>
-            <a href='../../A83hD94dM05Igdr5N.php'><h2 style='color: #f03c56'>BACK</h2></a> <br/></div></div>";
+            <a href='../../A83hD94dM05Igdr5N.php style='text-decoration:none;''><h2 style='color: #f03c56'>BACK</h2></a> <br/></div></div>";
         }
 
         $mysqli->close();

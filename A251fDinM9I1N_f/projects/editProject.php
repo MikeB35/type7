@@ -1,63 +1,210 @@
 <?php
 if (isset($_POST['send'])){
     $id = $_POST["id"];
-    $name = $_POST["name"];
-    $image = $_POST["get_image"];
-    $smallD = $_POST["smallD"];
-    $discrip = $_POST["discrip"];
-    $orderedBy = $_POST["orderedBy"];
-    $designer = $_POST["designer"];
-    $developer = $_POST["developer"];
-    $time = $_POST["time"];
-    $design = $_POST["design"];
-    $designImg = $_POST["designImg"];
-    $designD = $_POST["designD"];
-    $designL = $_POST["designL"];
-    $link = $_POST["link"];
-    $status = $_POST["status"];
-    $business = $_POST["business"];
+    $newName = $_POST["name"];
+    // $newImage = $_POST["get_image"];
+    $newSmallD = $_POST["smallD"];
+    $newDiscrip = $_POST["discrip"];
+    $newOrderedBy = $_POST["orderedBy"];
+    $newDesigner = $_POST["designer"];
+    $newDeveloper = $_POST["developer"];
+    $newTime = $_POST["time"];
+    $newDesign = $_POST["design"];
+    // $newDesignImg = $_POST["get_designImg"];
+    $newDesignD = $_POST["designD"];
+    $newDesignL = $_POST["designL"];
+    $newLink = $_POST["link"];
+    $newStatus = $_POST["status"];
+    $newBusiness = $_POST["business"];
     $sure = $_POST["sure"];
 
-    $img_type = substr($_FILES['get_image']['type'], 0, 5);
+    $img_type1 = substr($_FILES['get_image']['type'], 0, 5);
+    $img_type2 = substr($_FILES['get_designImg']['type'], 0, 5);
     $img_size = 2*2048*2048;
 
-    //▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨ DESIGN_IMAGE ▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨
+    // if(empty($newImage)){
+    //     echo 'new image is eeeeeeeempty';
+    //     echo '</br>';
+    // }elseif(!empty($newImage)){
+    //     echo "NEW IMAGE ISNOT EMPTY";
+    //     echo '</br>';
+    // }
+    // echo $id;
+    // echo '</br>';
+    // echo $newStatus;
+    // echo '</br>';
 
-    if(!empty($_FILES['get_designImg']['tmp_name']) and $img_type === 'image' and $_FILES['get_designImg']['size'] <= $img_size){
-        $designImg = addslashes(file_get_contents($_FILES['get_designImg']['tmp_name']));
+    //!------------IMPORT OLD VALUES-------------
+    //CONNECT TO DATABASE
+    $mysqli = new mysqli("localhost","sqluser","password","type7eu") or die("Connect failed: %s\n". $mysqli -> error);
+    $mysqli -> query("SET NAMES 'utf8'");
+
+    $project = $mysqli ->query("SELECT * FROM `projects` WHERE `id`='$id'");
+    $mysqli -> close();
+    function openProject($project){
+        while ($row = mysqli_fetch_assoc($project)) {
+            // $GLOBALS["id"] = $row["id"];
+            $GLOBALS["name"] = $row["name"];
+            $GLOBALS["image"] = $row["image"];
+            $GLOBALS["smallD"] = $row["small_discrip"];
+            $GLOBALS["discrip"] = $row["discrip"];
+            $GLOBALS["orderedBy"] = $row["ordered_by"];
+            $GLOBALS["designer"] = $row["designer"];
+            $GLOBALS["developer"] = $row["developer"];
+            $GLOBALS["time"] = $row["time"];
+            $GLOBALS["design"] = $row["design"];
+            $GLOBALS["designImg"] = $row["design_img"];
+            $GLOBALS["designD"] = $row["design_descrip"];
+            $GLOBALS["designL"] = $row["design_link"];
+            $GLOBALS["link"] = $row["link"];
+            $GLOBALS["status"] = $row["status"];
+            $GLOBALS["business"] = $row["business"];
+
+            $GLOBALS["show_img"] = base64_encode($row['image']);
+            $GLOBALS["show_designImg"] = base64_encode($row['design_img']);
+
+        }
+
+    }
+    openProject($project);
+    // echo $time;
+    // echo gettype($time)."\n";
+    // $time +=100;
+    // settype($time, "integer");
+    // echo gettype($time)."\n";
+    // $time /= 2;
+    // echo $time;
+    // echo $image;
+        // if(empty($image)){
+        //     echo 'old image is empty';
+        // }if(empty($newImage)){
+        //     echo 'new image is empty';
+        // }
+        // echo "kokot";
+        // echo '</br>';
+
+        // echo $newImage;
+    //!------------------------------------
+    //▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨ NEW DESIGN_IMAGE ▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨
+
+    if(!empty($_FILES['get_designImg']['tmp_name']) and $img_type2 === 'image' and $_FILES['get_designImg']['size'] <= $img_size){
+        $newDesignImg = addslashes(file_get_contents($_FILES['get_designImg']['tmp_name']));
     }
 
-    //▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨ PROJECT_IMAGE ▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨
-    if(!empty($_FILES['get_image']['tmp_name']) and $img_type === 'image' and $_FILES['get_image']['size'] <= $img_size){
-        $img = addslashes(file_get_contents($_FILES['get_image']['tmp_name']));
+    //▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨ NEW PROJECT_IMAGE ▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨
+    if(!empty($_FILES['get_image']['tmp_name']) and $img_type1 === 'image' and $_FILES['get_image']['size'] <= $img_size){
+        $newImg = addslashes(file_get_contents($_FILES['get_image']['tmp_name']));
     }
-    if ($name != "" && $sure === "on"){ # IF CONTENT OR TITLE AREN'T EMPTY
+    if ($sure === "on"){ # IF CONTENT OR TITLE AREN'T EMPTY
 
         //CONNECT TO DATABASE
         $mysqli = new mysqli("localhost","sqluser","password","type7eu") or die("Connect failed: %s\n". $mysqli -> error);
         $mysqli -> query("SET NAMES 'utf8'");
 
 // Check connection
-        $sql = "UPDATE `projects` SET `name`='$name',`image`='$img',`small_discrip`='$smallD',`discrip`='$discrip',`designer`='$designer', `developer`='$developer', `time`='$time',`design`='$design',`design_img`='$designImg',`design_descrip`='$designD',`design_link`='$designL',`link`='$link',`status`='$status' ,`business`='$business' WHERE `id` = '$id'";
-//        $sql = "INSERT INTO `projects` (`id`, `name`, `image`, `small_discrip`, `discrip`, `design`, `design_descrip`, `design_link`, `link`, `status`)
-//VALUES ('', '$name', '$img', '$smallD','$discrip','$design', '$designD', '$designL', '$link','$status')";
+//!--------------------------------
+    //*------VALUES UPDATED?--------
+    // echo $newName;
+    // echo $newSmallD;
+    // echo $newTime;
+    // if(empty($newTime)){
+    //     echo "empty";
+    // }elseif(!empty($newTime)){
+    //     echo "not empty";
+    // }
+    // $newTime = $time;
+    // echo $newTime;
 
+    if(empty($newName)){
+        $newName = $name;
+    }if(empty($newImage)){
+        // $show_img = base64_encode($image);
+        // echo $show_img;
+        // $newImg = $show_img;
+        // $newImage = $image;
+    }if(empty($newSmallD)){
+        $newSmallD = $smallD;
+    }if(empty($newDiscrip)){
+        $newDiscrip = $discrip;
+    }if(empty($newOrderedBy)){
+        $newOrderedBy = $orderedBy;
+    }if(empty($newDesigner)){
+        $newDesigner = $designer;
+    }if(empty($newDeveloper)){
+        $newDeveloper = $developer;
+    }if(empty($newTime)){
+        $newTime = $time;
+    }if(empty($newDesign)){
+        $newDesign = $design;
+    }if(empty($newDesignImg)){
+        // $newDesignImg = $designImg;
+    }if(empty($newDesignD)){
+        $newDesignD = $designD;
+    }if(empty($newDesignL)){
+        $newDesignL = $designL;
+    }if(empty($newLink)){
+        $newLink = $link;
+    }if(empty($newStatus)){
+        $newStatus = $status;
+    }if(empty($newBusiness)){
+        $newBusiness = $business;
+    }
+    // $show_img = base64_encode($newImage);
 
-        if ($mysqli->query($sql) === TRUE) {
-            echo "<div style='width: 100%; height: 100%; display: flex;justify-content: center;align-items: center'><div style='text-align: center; font-family: \"Maven Pro\", sans-serif; font-weight: 800'><h1 style='color: #3B3D4A'>New record edited successfully</h1> <br/>
-            <a href='../../A83hD94dM05Igdr5N.php'><h2 style='color: #f03c56'>BACK</h2></a> <br/></div></div>";
-        } else {
-            echo "<div style='width: 100%; height: 100%; display: flex;justify-content: center;align-items: center'><div style='text-align: center; font-family: \"Maven Pro\", sans-serif; font-weight: 800'><h1 style='color: #3B3D4A'>
-\"Error: \" . $sql . \"<br>\" . $mysqli->error
-</h1> <br/>
-            <a href='../../A83hD94dM05Igdr5N.php'><h2 style='color: #f03c56'>BACK</h2></a> <br/></div></div>";
+    date_default_timezone_set("Europe/Prague");
+    //? IF IMAGES NEED TO BE UPDATED
+    if(!empty($newImg)){
+        $sql2 = "UPDATE `projects` SET `image`='$newImg'  WHERE `id` = '$id'";
+        //!------UPDATE PROJECT IMAGE------
+        if ($mysqli->query($sql2) === TRUE) {
+            echo "</br>";
+            echo '<p style="color:#6ce619; font-weight:900;margin:0;">' . date("Y/m/d ~ h:i:s ") . " ⋙ project image is successfully updated ⟲ </p>";
+        }else{
+            echo "</br>";
+            echo '<p style="color:#f03c56; font-weight:900;margin:0;">' . date("Y/m/d ~ h:i:s ") . " ⋙ project image is NOT updated ⟲ </p>";
+            echo "</br>";
+            echo "\"Error: \" . $sql . \"<br>\" . $mysqli->error";
         }
+    }
+
+    if(!empty($newDesignImg)){
+        $sql3 = "UPDATE `projects` SET `design_img`='$newDesignImg' WHERE `id` = '$id'";
+        //!------UPDATE SCREENSHOT IMAGE------
+
+        if ($mysqli->query($sql3) === TRUE) {
+            echo "</br>";
+            echo '<p style="color:#6ce619; font-weight:900;margin:0;">' . date("Y/m/d ~ h:i:s ") . " ⋙ screenshot is successfully updated ⟲ </p>";
+        }else{
+            echo "</br>";
+            echo '<p style="color:#f03c56; font-weight:900;margin:0;">' . date("Y/m/d ~ h:i:s ") . " ⋙ screenshot is NOT updated ⟲ </p>";
+            echo "</br>";
+            echo "\"Error: \" . $sql . \"<br>\" . $mysqli->error";
+        }
+    }else{
+        echo "design image is empty";
+    }
+    //!---------UPDATE ALL---------
+    $sql1 = "UPDATE `projects` SET `name`='$newName', `small_discrip`='$newSmallD', `discrip`='$newDiscrip', `ordered_by`='$newOrderedBy', `designer`='$newDesigner', `developer`='$newDeveloper', `time`='$newTime',`design`='$newDesign',`design_descrip`='$newDesignD',`design_link`='$newDesignL',`link`='$newLink',`status`='$newStatus' ,`business`='$newBusiness' WHERE `id` = '$id'";
+    if ($mysqli->query($sql1) === TRUE) {
+        echo "</br>";
+        echo '<p style="color:#6ce619; font-weight:900;margin:0;">' . date("Y/m/d ~ h:i:s ") . " ⋙ values are successfully updated ⟲ </p>";
+        echo "<div style='width: 100%; height: 20%; display: flex;justify-content: center;align-items: center'><div style='text-align: center; font-family: \"Maven Pro\", sans-serif; font-weight: 800'><h1 style='color: #3B3D4A'>New record edited successfully</h1> <br/>
+        <a href='../../A83hD94dM05Igdr5N.php' style='text-decoration:none;'><h2 style='color: #f03c56'>BACK</h2></a> <br/></div></div>";
+    }else{
+        echo "</br>";
+        echo '<p style="color:#f03c56; font-weight:900;margin:0;">' . date("Y/m/d ~ h:i:s ") . " ⋙ values are NOT updated ⟲ </p>";
+        echo "</br>";
+        echo "\"Error: \" . $sql . \"<br>\" . $mysqli->error";
+    }
+//!--------------------------------
+
+        
 
         $mysqli -> close();
     }
-    $projectName = $name;
+    $projectName = $newName;
 
-    $file = fopen("../../projects/$name.php","w+");
+    $file = fopen("../../projects/$newName.php","w+");
     fwrite($file, '
     <!DOCTYPE html>
 <html lang="en">

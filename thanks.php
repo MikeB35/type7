@@ -15,7 +15,7 @@ require "source/php/menu.php";
     <div class="text">
         <h1>THANK YOU</h1>
         <h3>THANK YOU FOR SENDING YOUR E-MAIL,<BR>
-        WE'LL AS SOON AS IT'S POSIBLE</h3>
+        WE'LL RESPOND AS SOON AS IT'S POSIBLE</h3>
         <a href="index.php" class="card-link"><span>BACK HOME</span></a>
     </div>
 </div>
