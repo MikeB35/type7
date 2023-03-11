@@ -51,7 +51,22 @@ require "source/php/menu.php";
                 <h1>WELCOME BACK <h1 class="highlight d-none d-lg-block" >.</h1> </h1>
             </div>
             <div>
-                <h1 class="highlight">~</h1><h1>ADMIN</h1><h1 class="highlight">~</h1>
+                <?php
+                    //?CONNECT TO DATABASE
+                    $mysqli = new mysqli("localhost","sqluser","password","type7eu") or die("Connect failed: %s\n". $mysqli -> error);
+                    $mysqli->query("SET NAMES 'utf8'");
+                    //?GET SECURITY COOKIE
+                    $rSecurityKey = $_COOKIE['TRU$TED'];
+                    //?GET ADMIN RECORD IF EXISTS
+                    $admin = $mysqli->query("SELECT * FROM `admins` WHERE `security-key` = '$rSecurityKey'");
+                    $adminExists = $admin->fetch_assoc();
+
+                    if(!empty($adminExists['name'])){
+                        echo '<h1 class="highlight">~</h1><h1>ADMIN</h1><h1 class="highlight">~</h1>';
+                    }else{
+                        echo '<h1 class="highlight">~</h1><h1>MOD</h1><h1 class="highlight">~</h1>';
+                    }
+                ?>
             </div>
         </div>
         <div class="col-12 col-lg-5 statistic">
@@ -264,23 +279,42 @@ $mysqli->close();
             </div>
         </div>
     </div>
-    <div class="row deleteProjectForm">
-        <h1>DELETE EXIST PROJECT</h1>
-        <div class="col-md-12 deleteProject">
-            <div class="col-md-6 form">
-                <form method="post" action="A251fDinM9I1N_f/projects/deleteProject.php">
-                    <div class="form-group">
-                        <input name="id" type="number" aria-label="" class="form-control" id="nameInput"  placeholder="ID">
-                    </div>
-                    <div class="form-check">
-                        <input name="sure" type="checkbox" class="form-check-input" id="sure" required>
-                        <label class="form-check-label" for="sure">ARE YOU SURE?</label>
-                    </div>
-                    <button type="submit" class="btn" name="send"><span>DELETE</span></button>
-                </form>
+    
+    <?php
+    //!-----------ADMIN PERMISSION------------
+    //?CONNECT TO DATABASE
+    $mysqli = new mysqli("localhost","sqluser","password","type7eu") or die("Connect failed: %s\n". $mysqli -> error);
+    $mysqli->query("SET NAMES 'utf8'");
+    //?GET SECURITY COOKIE
+    $rSecurityKey = $_COOKIE['TRU$TED'];
+    //?GET ADMIN RECORD IF EXISTS
+    $admin = $mysqli->query("SELECT * FROM `admins` WHERE `security-key` = '$rSecurityKey'");
+    $adminExists = $admin->fetch_assoc();
+
+    // echo !empty($adminExists['name']);
+    if(!empty($adminExists['name'])){
+        echo '<div class="row deleteProjectForm">
+            <h1>DELETE EXIST PROJECT</h1>
+            <div class="col-md-12 deleteProject">
+                <div class="col-md-6 form">
+                    <form method="post" action="A251fDinM9I1N_f/projects/deleteProject.php">
+                        <div class="form-group">
+                            <input name="id" type="number" aria-label="" class="form-control" id="nameInput"  placeholder="ID">
+                        </div>
+                        <div class="form-check">
+                            <input name="sure" type="checkbox" class="form-check-input" id="sure" required>
+                            <label class="form-check-label" for="sure">ARE YOU SURE?</label>
+                        </div>
+                        <button type="submit" class="btn" name="send"><span>DELETE</span></button>
+                    </form>
+                </div>
             </div>
-        </div>
-    </div>
+        </div>';
+    }
+    $mysqli->close();
+    //!--------------------------------------
+    ?>
+    
 </div>
 
 <?

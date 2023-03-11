@@ -3,32 +3,95 @@
 
 if (isset($_POST['login'])){
     $name = $_POST['name'];
+    $login = $_POST['email'];
     $password = $_POST['password'];
-    $t7code = $_POST['t7code'];
 
 //███████████████████████SECURITY CHECK███████████████████████
     $name = htmlspecialchars($name);
+    $login = htmlspecialchars($login);
     $password = htmlspecialchars($password);
-    $t7code = htmlspecialchars($t7code);
 
     $name = urldecode($name);
+    $login = urldecode($login);
     $password = urldecode($password);
-    $t7code = urldecode($t7code);
 
     $name = trim($name);
+    $login = trim($login);
     $password = trim($password);
-    $t7code = trim($t7code);
 
-//███████████████████████SET COOKIE███████████████████████
-//!-------------------SECURITY COOKIE---------------------
-    if ($name == ('123' || '123') && $password === '123' && $t7code === '123'){
-        $cookieCode = array('gDt4-$8bs-@nDka-Lja2', 'gs6$-Bia7-Gard-D%ja', 'Q843-st67-2tes-Fe34', '472v-74nf-D93s-kjg4');
-        setcookie('TRU$TED', $cookieCode[rand(0,3)], time() + 1800);
-        print '<script type="text/javascript">window.location.replace("A83hD94dM05Igdr5N.php");</script>';
+
+    //!---------------DATABASE CONNECTION---------------
+    $mysqli = new mysqli("localhost","sqluser","password","type7eu") or die("Connect failed: %s\n". $mysqli -> error);
+    $mysqli->query("SET NAMES 'utf8'");
+    
+    //?GET ADMIN RECORD IF EXISTS
+    $admin = $mysqli->query("SELECT * FROM `admins` WHERE `name` = '$name'");
+    $adminExists = $admin->fetch_assoc();
+    
+    //?GET MODERATOR RECORD IF EXISTS
+    $mods = $mysqli->query("SELECT * FROM `moderators` WHERE `name` = '$name'");
+    $modExits = $mods->fetch_assoc();
+
+    //?GET USERS RECORD IF EXISTS
+    $users = $mysqli->query("SELECT * FROM `users` WHERE `name` = '$name'");
+    $userExits = $users->fetch_assoc();
+
+    if(!empty($adminExists['name'])){ //? FOR ADMINS
+        // $row = $admin->fetch_assoc();
+        //? r => REAL (values from database)
+        $rLogin = $adminExists['login'];
+        $rPassword = $adminExists['password'];
+        $rSecurityKey = $adminExists['security-key'];
+        //!-------------------SECURITY COOKIE---------------------
+        if ($login === $rLogin && $password === $rPassword){
+            // $cookieCode = array('gDt4-$8bs-@nDka-Lja2', 'gs6$-Bia7-Gard-D%ja', 'Q843-st67-2tes-Fe34', '472v-74nf-D93s-kjg4');
+            // setcookie('TRU$TED', $cookieCode[rand(0,3)], time() + 1800);
+            setcookie('TRU$TED', $rSecurityKey, time() + 1800);
+            print '<script type="text/javascript">window.location.replace("A83hD94dM05Igdr5N.php");</script>';
+        }
+        else{
+            echo '<script>alert("Error: Your login or password is wrong, try again")</script>'; 
+        }
+    }elseif(!empty($modExits['name'])){ //? FOR MODERATORS
+        // $row = $mods->fetch_assoc();
+        //? r => REAL (values from database)
+        $rLogin = $modExits['login'];
+        $rPassword = $modExits['password'];
+        $rSecurityKey = $modExits['security-key'];
+        //!-------------------SECURITY COOKIE---------------------
+        if (($login === $rLogin) && ($password === $rPassword)){
+            // $cookieCode = array('gDt4-$8bs-@nDka-Lja2', 'gs6$-Bia7-Gard-D%ja', 'Q843-st67-2tes-Fe34', '472v-74nf-D93s-kjg4');
+            // setcookie('TRU$TED', $cookieCode[rand(0,3)], time() + 1800);
+            setcookie('TRU$TED', $rSecurityKey, time() + 1800);
+            print '<script type="text/javascript">window.location.replace("A83hD94dM05Igdr5N.php");</script>';
+        }
+        else{
+            echo '<script>alert("Error: Your login or password is wrong, try again")</script>'; 
+        }
+    }elseif(!empty($userExits['name'])){ //? FOR USERS
+        // $row = $mods->fetch_assoc();
+        //? r => REAL (values from database)
+        $rLogin = $userExits['login'];
+        $rPassword = $userExits['password'];
+        $rSecurityKey = $userExits['security-key'];
+        //!-------------------SECURITY COOKIE---------------------
+        if (($login === $rLogin) && ($password === $rPassword)){
+            // $cookieCode = array('gDt4-$8bs-@nDka-Lja2', 'gs6$-Bia7-Gard-D%ja', 'Q843-st67-2tes-Fe34', '472v-74nf-D93s-kjg4');
+            // setcookie('TRU$TED', $cookieCode[rand(0,3)], time() + 1800);
+            setcookie('TRU$TED', $rSecurityKey, time() + 1800);
+            print '<script type="text/javascript">window.location.replace("error404.php");</script>';
+        }
+        else{
+            echo '<script>alert("Error: wrong values")</script>';
+        }
     }
     else{
-        echo '<script>alert("Error: wrong values")</script>';
+        echo '<script>alert("Error: Your login or password is wrong, try again")</script>'; 
     }
+
+    //!-------------------------------------------------
+
+
 }
 
 ?>
@@ -53,12 +116,13 @@ require "source/php/menu.php";
                 <input name="name" type="text" aria-label="" class="form-control" id="nameInput" aria-describedby="emailHelp" placeholder="NAME" required>
             </div>
             <div class="form-group">
-                <input name="password" type="password" aria-label="" class="form-control" id="exampleInputPassword1" placeholder="PASSWORD" required>
+                <input name="email" type="email" aria-label="" class="form-control" id="exampleInputPassword1" placeholder="EMAIL" required>
+                <!-- <small id="emailHelp" class="form-text text-muted">ONE OF THE T7codes</small> -->
             </div>
             <div class="form-group">
-                <input name="t7code" type="password" aria-label="" class="form-control" id="exampleInputPassword1" placeholder="T7_CODE" required>
-                <small id="emailHelp" class="form-text text-muted">ONE OF THE T7codes</small>
+                <input name="password" type="password" aria-label="" class="form-control" id="exampleInputPassword1" placeholder="PASSWORD" required>
             </div>
+            
             <button name="login" type="submit" class="btn"><span>LOG IN</span></button>
         </form>
     </div>

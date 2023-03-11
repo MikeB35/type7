@@ -10,7 +10,7 @@ $mysqli -> query("SET NAMES 'utf8'");
 //else {
 //    echo "Has been successfuly connected <br />";
 //}
-$projects = $mysqli ->query("SELECT * FROM `projects`");
+$projects = $mysqli ->query("SELECT * FROM `projects` ORDER BY id DESC");
 //echo "kokos";
 $mysqli -> close();
 
